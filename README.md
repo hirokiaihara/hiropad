@@ -1,24 +1,67 @@
-# README
+# データベース設計
+## usersテーブル
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|email|string|null: false|
+|year|integer|null: false|
+|month|integer|null: false|
+|day|integer|null: false|
+|encrypted_password|string|null: false|
+|password_confirmation|string|null: false|
+|user_image|string||
 
-Things you may want to cover:
+### Association
+- has_many :recipes
+- has_many :reports
 
-* Ruby version
+## recipesテーブル
 
-* System dependencies
+|Column|Type|Options|
+|------|----|-------|
+|title|string|null: false|
+|top_image|string|null: false|
+|point|text||
+|background|text||
 
-* Configuration
+### Association
+- has_many :processes
+- has_many :ingredients
+- has_many :reports
+- belongs_to :user
 
-* Database creation
+## processesテーブル
 
-* Database initialization
+|Column|Type|Options|
+|------|----|-------|
+|image|string|null: false|
+|how|text|null: false|
+|recipe_id|integer|null: false, foreign_key: true|
 
-* How to run the test suite
+### Association
+- belongs_to :recipe
 
-* Services (job queues, cache servers, search engines, etc.)
+## ingredientsテーブル
 
-* Deployment instructions
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|amount|string|null: false|
+|recipe_id|integer|null: false, foreign_key: true|
 
-* ...
+### Association
+- belongs_to :recipe
+
+## reportsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|image|string|null: false|
+|comment|text|null: false|
+|recipe_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false|
+
+### Association
+- belongs_to :recipe
+- belongs_to :user
