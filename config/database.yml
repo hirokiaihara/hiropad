@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: hiropad_production
-  username: hiropad
-  password: <%= ENV['HIROPAD_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
