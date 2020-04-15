@@ -6,6 +6,7 @@ class UsersController < ApplicationController
     if current_user.update(user_params)
       redirect_to root_path
     else
+      flash[:notice] = "更新できません。入力項目を確認してください。"
       render :edit
     end
   end
