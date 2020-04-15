@@ -4,12 +4,11 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|email|string|null: false|
+|email|string|null: false, unique: true|
 |year|integer|null: false|
 |month|integer|null: false|
 |day|integer|null: false|
 |encrypted_password|string|null: false|
-|password_confirmation|string|null: false|
 |user_image|string||
 
 ### Association
