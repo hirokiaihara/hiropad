@@ -7,4 +7,19 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
+    %header
+      = link_to root_path, class: 'btn' do
+        hiropad
+      - if user_signed_in?
+        = link_to edit_user_path(current_user.id), class: 'btn' do
+          = current_user.name
+        = link_to edit_user_path(current_user.id), class: 'btn' do
+          %i.fas.fa-cog
+      - else
+        = link_to "ログイン", new_user_session_path, class: 'btn'
+        = link_to "新規登録", new_user_registration_path, class: 'btn'
+    = render 'layouts/notifications'
     = yield
+    %footer
+      - if user_signed_in?
+        = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'
