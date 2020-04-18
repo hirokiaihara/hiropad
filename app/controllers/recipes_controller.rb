@@ -2,7 +2,7 @@ class RecipesController < ApplicationController
   # before_action :authenticate_user!
   
   def index
-    
+    @recipes = Recipe.includes(:foods, :makes)
   end
 
   def new
@@ -13,7 +13,6 @@ class RecipesController < ApplicationController
   end
 
   def create
-    
     @recipe = Recipe.create(recipe_params)
     if @recipe.save
       flash[:notice] = "レシピを公開しました"
@@ -22,6 +21,13 @@ class RecipesController < ApplicationController
       render :new
     end
   end
+
+  def show
+    @recipe = Recipe.includes(:foods)
+    @recipe = Recipe.includes(:makes)
+    @recipe = Recipe.find(params[:id])
+  end
+
 
   private
 

@@ -1,2 +1,5 @@
-%h1 自動デプロイテスト
-%p Find me in app/views/recipes/index.html.erb
+.main.index__recipe__page
+  .container
+    - @recipes.each do |recipe|
+      = link_to recipe.title
+      = image_tag recipe.top_image.url
