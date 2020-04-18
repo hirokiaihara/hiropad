@@ -1,0 +1,18 @@
+.main.show__recipe__page
+  .container
+    = @recipe.user.name
+    = @recipe.title
+    = image_tag @recipe.top_image.url
+    - @recipe.foods.each do |food|
+      = food.food_name
+      = food.amount
+    
+    - @recipe.makes.each do |make|
+      - if make.image.present?
+        = image_tag make.image.url
+      - if make.how_make.present?
+        = make.how_make
+    = @recipe.point
+    = @recipe.background
+
+    
