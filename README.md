@@ -21,16 +21,18 @@
 |------|----|-------|
 |title|string|null: false|
 |top_image|string|null: false|
+|how_many|string|null: false|
 |point|text||
 |background|text||
+|user_id|integer|null: false|
 
 ### Association
-- has_many :processes
-- has_many :ingredients
+- has_many :makes
+- has_many :foods
 - has_many :reports
 - belongs_to :user
 
-## processesテーブル
+## makesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -64,3 +66,4 @@
 ### Association
 - belongs_to :recipe
 - belongs_to :user
+
