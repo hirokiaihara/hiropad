@@ -14,5 +14,7 @@
         = make.how_make
     = @recipe.point
     = @recipe.background
+    - if user_signed_in? && current_user.id == @recipe.user_id
+      = link_to "削除", recipe_path(@recipe), method: :delete, data: {confirm: "削除しますか？"}
 
     
