@@ -1,3 +1,27 @@
 * {
   box-sizing: border-box;
 }
+.main {
+  background-color: $main_color;
+  width: 100%;
+}
+header {
+  background-color: #ffffff;
+}
+.service__header {
+  background-color: $main-color;
+}
+footer {
+  background-color: #ffffff;
+}
+.container {
+  width: 1000px;
+  margin: 0 auto;
+  background-color: #ffffff;
+}
+.field--flex {
+  display: flex;
+}
+.hideen {
+  display: none;
+ }

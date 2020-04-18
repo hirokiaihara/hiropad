@@ -1,0 +1,58 @@
+.hidden {
+  display: none;
+}
+#hidden-message {
+  display: none;
+  color: $alert_orange;
+}
+input.hidden {
+  display: none;
+}
+textarea.hidden {
+  display: none;
+}
+img#top_img_prev, img.top_present_img {
+  width: 280px;
+}
+.top-image-field {
+  width: 280px;
+}
+#hidden-background-text, #hidden-point-text {
+  display: none;
+}
+.top-image-box {
+  width: 280px;
+  height: 383px;
+  border: 1px solid ;
+  background-color: $main-color;
+  opacity: 0.4;
+  font-weight: bold;
+  p {
+    font-weight: normal;
+  }  
+}
+.makes-field {
+  &-container {
+    width: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    
+    .makes-content {
+      width: 140px;
+      .image-box {
+        width: 140px;
+        height: 190px;
+        border: 1px solid;
+        background-color: $main-color;
+        opacity: 0.4;
+        font-size: 15px;
+      }
+      .text-box {
+        textarea {
+          width: 140px;
+          height: 120px;
+        }
+      }
+    }
+  }
+}
