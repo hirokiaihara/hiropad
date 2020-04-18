@@ -6,7 +6,6 @@
     - @recipe.foods.each do |food|
       = food.food_name
       = food.amount
-    
     - @recipe.makes.each do |make|
       - if make.image.present?
         = image_tag make.image.url
@@ -24,7 +23,10 @@
             = image_tag report.report_image.url
           .field
             = report.comment
-          
+  #open
+    つくれぽを書く
+  #mask.hidden
+  %section#modal.hidden
     .new__report__form
       %h2 つくれぽを投稿しよう！
       .new__report__form__body
@@ -38,10 +40,15 @@
               -else 
                 .report-image-box.top_present_img-r
                   %i.fas.fa-edit
-                  写真を載せる
-                
+                  写真をのせる
+                  
               = f.file_field :report_image, class: "hidden"
-          
+            
           = f.text_area :comment
           = f.submit "つくれぽを投稿する"
+    #close
+      閉じる
+    
+    
+    
     
