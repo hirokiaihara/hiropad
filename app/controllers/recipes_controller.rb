@@ -18,6 +18,7 @@ class RecipesController < ApplicationController
       flash[:notice] = "レシピを公開しました"
       redirect_to root_path
     else
+      flash[:alert] = "投稿できませんでした。必須項目を確認してください"
       render :new
     end
   end
@@ -26,6 +27,9 @@ class RecipesController < ApplicationController
     @recipe = Recipe.includes(:foods)
     @recipe = Recipe.includes(:makes)
     @recipe = Recipe.find(params[:id])
+
+    @report = Report.new
+    @reports = @recipe.reports.includes(:user)
   end
 
   def destroy
