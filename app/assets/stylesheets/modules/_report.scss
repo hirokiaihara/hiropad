@@ -1,0 +1,14 @@
+img#top_img_prev-r, img.top_present_img-r {
+  width: 200px;
+}
+.report-image-box {
+  width: 200px;
+  height: 260px;
+  border: 1px solid ;
+  background-color: $main-color;
+  opacity: 0.4;
+  font-weight: bold;
+  p {
+    font-weight: normal;
+  }  
+}
