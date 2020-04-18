@@ -13,12 +13,18 @@
       - if user_signed_in?
         = link_to edit_user_path(current_user.id), class: 'btn' do
           = current_user.name
+        
         = link_to edit_user_path(current_user.id), class: 'btn' do
           %i.fas.fa-cog
       - else
         = link_to "ログイン", new_user_session_path, class: 'btn'
         = link_to "新規登録", new_user_registration_path, class: 'btn'
     = render 'layouts/notifications'
+    .service__header
+      - if user_signed_in?
+        = link_to "レシピを書く", new_recipe_path, class: 'btn'
+      - else
+        = link_to "ログインしてレシピを書く", new_user_session_path, class: 'btn'
     = yield
     %footer
       - if user_signed_in?
