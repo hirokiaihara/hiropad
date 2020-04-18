@@ -1,5 +1,6 @@
 .main.index__recipe__page
   .container
     - @recipes.each do |recipe|
-      = link_to recipe.title
+      = link_to recipe_path(recipe.id) do
+        = recipe.title
       = image_tag recipe.top_image.url
