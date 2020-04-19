@@ -23,31 +23,28 @@
             = image_tag report.report_image.url
           .field
             = report.comment
-  #open
-    つくれぽを書く
-  #mask.hidden
-  %section#modal.hidden
-    .new__report__form
-      %h2 つくれぽを投稿しよう！
-      .new__report__form__body
-        =form_for [@recipe, @report] do |f|
-          .image-field
-            %label(for="report_report_image")
-              .field
-                %img#top_img_prev-r
-              - if @report.report_image.present?
-                = image_tag @report.report_image.url, class: "top_present_img-r"
-              -else 
-                .report-image-box.top_present_img-r
-                  %i.fas.fa-edit
-                  写真をのせる
-                  
-              = f.file_field :report_image, class: "hidden"
-            
-          = f.text_area :comment
-          = f.submit "つくれぽを投稿する"
-    #close
-      閉じる
+    .field
+      つくれぽを書く
+      .new__report__form
+        %h2 つくれぽを投稿しよう！
+        .new__report__form__body
+          =form_for [@recipe, @report] do |f|
+            .image-field
+              %label(for="report_report_image")
+                .field
+                  %img#top_img_prev-r
+                - if @report.report_image.present?
+                  = image_tag @report.report_image.url, class: "top_present_img-r"
+                -else 
+                  .report-image-box.top_present_img-r
+                    %i.fas.fa-edit
+                    写真をのせる
+                    
+                = f.file_field :report_image, class: "hidden"
+              
+            = f.text_area :comment
+            = f.submit "つくれぽを投稿する"
+    
     
     
     
