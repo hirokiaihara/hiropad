@@ -23,9 +23,10 @@
             = image_tag report.report_image.url
           .field
             = report.comment
-    .field
+    #open
       つくれぽを書く
-      .new__report__form
+    #mask.hidden
+      %section#modal
         %h2 つくれぽを投稿しよう！
         .new__report__form__body
           =form_for [@recipe, @report] do |f|
@@ -44,7 +45,7 @@
               
             = f.text_area :comment
             = f.submit "つくれぽを投稿する"
-    
+        #close 閉じる
     
     
     

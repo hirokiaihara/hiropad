@@ -16,3 +16,18 @@ $(document).on('turbolinks:load', function() {
     readURL(this);
   })
 });
+
+$(document).on('turbolinks:load', function() {
+  $('#open').on('click', function() {
+    $('#modal').show();
+    $('#mask').show();
+  });
+  
+});
+
+$(document).on('turbolinks:load', function() {
+  $('#close').on('click', function() {
+    $('#modal').hide();
+    $('#mask').hide();
+  });
+});
