@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get "users/:id/show_reports" => "users#show_reports"
   get "users/:id/myrecipes" => "users#myrecipes"
   resources :recipes do
-    resources :reports, only: [:create]
+    resources :reports, only: [:create, :destroy]
     collection do
       get 'search'
     end

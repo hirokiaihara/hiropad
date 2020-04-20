@@ -12,9 +12,10 @@
     - if @recipes.present?
       = link_to "レシピ一覧", "/users/#{@user.id}/show_recipes"
       - @recipes.each do |recipe|
-        
-        = recipe.title
         = image_tag recipe.top_image.url
+        = recipe.title
+        - if current_user.id == recipe.user_id
+          = link_to "削除", recipe_path(recipe), method: :delete, data: {confirm: "削除しますか？"}
     - else
       %p 投稿がまだありません
     %h2 つくれぽ

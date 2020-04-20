@@ -9,6 +9,12 @@ class ReportsController < ApplicationController
     end
   end
 
+  def destroy
+    report = Report.find(params[:id])
+    report.destroy
+    redirect_to "/users/#{current_user.id}/show_reports"
+  end
+
   private
   def report_params
     params.require(:report).permit(:comment, :report_image).merge(user_id: current_user.id, recipe_id: params[:recipe_id])
