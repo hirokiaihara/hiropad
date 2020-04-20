@@ -1,0 +1,28 @@
+.main
+  .container
+    - if @user.user_image.present?
+      = image_tag @user.user_image.url
+    - else
+      = image_tag "member_photo_noimage_thumb.png",size: "130x130"
+    = @user.name
+    のキッチン
+    - if user_signed_in? && current_user.id == @user.id
+      = link_to "プロフィールを編集", edit_user_path(@user)
+    %h2 投稿したレシピ
+    - if @recipes.present?
+      = link_to "レシピ一覧", "/users/#{@user.id}/show_recipes"
+      - @recipes.each do |recipe|
+        
+        = recipe.title
+        = image_tag recipe.top_image.url
+    - else
+      %p 投稿がまだありません
+    %h2 つくれぽ
+    - if @reports.present?
+      = link_to "つくれぽ一覧", "/users/#{@user.id}/show_reports"
+      - @reports.each do |report|
+        
+        = link_to image_tag report.report_image.url
+        = report.comment
+    - else
+      %p 投稿がまだありません

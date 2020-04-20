@@ -1,0 +1,10 @@
+.main
+  .container
+    = @user.name
+    さんのつくれぽ一覧
+    - if @reports.present?
+      - @reports.each do |report|
+        = image_tag report.report_image.url
+        = report.comment
+    - else
+      %p 投稿がまだありません
