@@ -11,5 +11,10 @@ class Recipe < ApplicationRecord
   accepts_nested_attributes_for :foods, allow_destroy: true
   accepts_nested_attributes_for :makes, allow_destroy: true
   mount_uploader :top_image, ImageUploader
+
+  def self.search(search)
+    return Recipe.all unless search
+    Recipe.joins(:foods).where('title LIKE(?) OR foods.food_name LIKE(?)', "%#{search}%", "%#{search}%")
+  end
   
 end

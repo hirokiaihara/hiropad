@@ -1,0 +1,10 @@
+.main
+  .container 
+    -if @recipes.present?
+      - @recipes.each do |recipe|
+        = recipe.title
+        = image_tag recipe.top_image.url
+    - else
+      %p 一致するレシピはありませんでした。
+      %p ひらがなやカタカナ、漢字で検索したみてください。
+      

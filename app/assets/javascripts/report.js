@@ -17,14 +17,14 @@ $(document).on('turbolinks:load', function() {
 });
 //モーダルの表示・非表示
 $(document).on('turbolinks:load', function() {
-  $('#open').on('click', function() {
-    $('#modal').show();
-    $('#mask').show();
+  $('#open-report-modal').on('click', function() {
+    $('#report-modal').show();
+    $('#report-mask').show();
   });
 });
 $(document).on('turbolinks:load', function() {
-  $('#close').on('click', function() {
-    $('#modal').hide();
-    $('#mask').hide();
+  $('#close-report-modal').on('click', function() {
+    $('#report-modal').hide();
+    $('#report-mask').hide();
   });
 });
