@@ -1,3 +1,4 @@
+//新規登録・誕生日入力欄
 $(document).on('turbolinks:load', function () {
   // 誕生日の配列を宣言
   var birth_year = [];

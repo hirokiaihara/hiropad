@@ -1,3 +1,4 @@
+//レシピ投稿・食材入力フィールド
 $(document).on('turbolinks:load', ()=>{
   const buildTextField = (index)=> {
     const html = `<div class="field--flex">
@@ -29,18 +30,13 @@ $(document).on('turbolinks:load', ()=>{
     }
     
   });
-
+  //入力欄の削除
   $('#food-field').on('click', '.js-remove', function() {
     $(this).parent().remove();
-    //1個にならないように
-    //if ($('.js-file').length == 0) $('#food-field').append(buildTextField(textIndex[0]));
     var count = $('.field--flex').length;
     if ( count < 15) {
       $('#add-btn').show();
       $('#hidden-message').hide();
     }
   });
-  
-  
-  
 });

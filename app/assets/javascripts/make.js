@@ -1,4 +1,5 @@
-//作り方プレビュー1
+//レシピ投稿・作り方
+//作り方画像プレビュー1
 $(document).on('turbolinks:load', ()=> {
   // プレビュー用のimgタグを生成する関数
   const buildImg = (index, url)=> {

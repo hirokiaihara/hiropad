@@ -3,21 +3,19 @@ $(document).on('turbolinks:load', function() {
   function readURL(input) {
     if (input.files && input.files[0]) {
       var reader = new FileReader();
-
       reader.onload = function (e) {
         $('#top_img_prev').attr('src', e.target.result);
       }
       reader.readAsDataURL(input.files[0]);
     }
   }
-
   $("#recipe_top_image").change(function(){
-    // $('#top_img_prev').removeClass('.hidden');
     $('.top_present_img').remove();
     readURL(this);
   })
 });
-//投稿欄表示
+
+//ポイント・生い立ち入力欄表示
 $(document).on('turbolinks:load', ()=>{
   $('#btn-field-left').on('click', function() {
     $('#btn-field-left').hide();
@@ -29,7 +27,7 @@ $(document).on('turbolinks:load', ()=>{
     $('#hidden-background-text').show();
   });
 });
-//投稿欄隠す
+//ポイント・生い立ち入力欄隠す
 $(document).on('turbolinks:load', ()=>{
   $('#remove-btn-left').on('click', function() {
     $('#btn-field-left').show();
