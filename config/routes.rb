@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'recipes#index'
-  resources :users, only: [:edit, :update]
+  resources :users, only: [:index, :show, :edit, :update]
+  get "users/:id/show_recipes" => "users#show_recipes"
+  get "users/:id/show_reports" => "users#show_reports"
   get "users/:id/myrecipes" => "users#myrecipes"
   resources :recipes do
     resources :reports, only: [:create]

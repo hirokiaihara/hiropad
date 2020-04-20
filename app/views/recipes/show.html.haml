@@ -5,7 +5,7 @@
         = link_to "マイレシピから削除", "/myrecipes/#{@recipe.id}/destroy", {method: "post"}
       - else
         = link_to "マイレシピに保存する", "/myrecipes/#{@recipe.id}/create", {method: "post"}
-    = @recipe.user.name
+    = link_to @recipe.user.name, "/users/#{@recipe.user_id}"
     = @recipe.title
     = image_tag @recipe.top_image.url
     - @recipe.foods.each do |food|

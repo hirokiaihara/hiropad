@@ -1,0 +1,12 @@
+.main
+  .container
+    = @user.name
+    さんの投稿レシピ
+    - if @recipes.present?
+      - @recipes.each do |recipe|
+        = image_tag recipe.top_image.url
+        = recipe.title
+    - else
+      %p 投稿がまだありません
+      
+     
