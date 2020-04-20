@@ -1,5 +1,11 @@
-.main
+.main.mayrecipes_page
   .container
-    - @myrecipes.each do |myrecipe|
-      - recipe = Recipe.find_by(id: myrecipe.recipe_id)
-      = recipe.title
+    - if @myrecipes.present?
+      - @myrecipes.each do |myrecipe|
+        - recipe = Recipe.find_by(id: myrecipe.recipe_id)
+        = link_to recipe_path(recipe.id) do
+          = recipe.title
+        = image_tag recipe.top_image.url
+        = link_to "マイレシピから削除", "/myrecipes/#{myrecipe.recipe_id}/myrecipe_destroy", {method: "post"}
+    - else
+      保存したレシピはありません

@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   end
   post "myrecipes/:recipe_id/create" => "myrecipes#create"
   post "myrecipes/:recipe_id/destroy" => "myrecipes#destroy"
+  post "myrecipes/:recipe_id/myrecipe_destroy" => "myrecipes#myrecipe_destroy"
 end
