@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200418204024) do
+ActiveRecord::Schema.define(version: 20200420050626) do
 
   create_table "foods", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "food_name",  null: false
@@ -28,6 +28,15 @@ ActiveRecord::Schema.define(version: 20200418204024) do
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
     t.index ["recipe_id"], name: "index_makes_on_recipe_id", using: :btree
+  end
+
+  create_table "myrecipes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "recipe_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["recipe_id"], name: "index_myrecipes_on_recipe_id", using: :btree
+    t.index ["user_id"], name: "index_myrecipes_on_user_id", using: :btree
   end
 
   create_table "recipes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -70,5 +79,7 @@ ActiveRecord::Schema.define(version: 20200418204024) do
 
   add_foreign_key "foods", "recipes"
   add_foreign_key "makes", "recipes"
+  add_foreign_key "myrecipes", "recipes"
+  add_foreign_key "myrecipes", "users"
   add_foreign_key "recipes", "users"
 end
