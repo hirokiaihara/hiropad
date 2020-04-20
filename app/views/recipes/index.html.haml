@@ -4,3 +4,9 @@
       = link_to recipe_path(recipe.id) do
         = recipe.title
       = image_tag recipe.top_image.url
+    - if @ranks.present?
+      - @ranks.each.with_index(1) do |recipe, i|
+        = i
+        位
+        = recipe.title
+        = image_tag recipe.top_image.url
