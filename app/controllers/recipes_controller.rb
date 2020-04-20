@@ -3,6 +3,7 @@ class RecipesController < ApplicationController
   
   def index
     @recipes = Recipe.includes(:foods, :makes)
+    @ranks = Recipe.create_ranks
   end
 
   def new

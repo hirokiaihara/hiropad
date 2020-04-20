@@ -16,5 +16,8 @@ class Recipe < ApplicationRecord
     return Recipe.all unless search
     Recipe.joins(:foods).where('title LIKE(?) OR foods.food_name LIKE(?)', "%#{search}%", "%#{search}%")
   end
-  
+
+  def self.create_ranks
+    Recipe.find(Report.group(:recipe_id).order('count(recipe_id) desc').limit(3).pluck(:recipe_id))
+  end
 end
