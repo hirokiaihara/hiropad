@@ -21,7 +21,22 @@
         = link_to "新規登録", new_user_registration_path, class: 'btn'
     = render 'layouts/notifications'
     .service__header
+      = form_tag(search_recipes_path, method: "get") do
+        %i.fas.fa-search
+        = text_field_tag :keyword, '', class: 'search-form', placeholder: "例) 焼きそば, 豚肉"
+        = submit_tag "レシピ検索", class: "btn"
+        #open-category-modal
+          カテゴリーから探す
+        #category-mask.hidden
+          %section#category-modal
+            %h2 料理名から探す
+            = link_to "豚肉", search_recipes_path(keyword: "豚肉")
+            %h2 食材から探す
+            = link_to "aaaa", search_recipes_path(keyword: "aaaa")
+            #close-category-modal
+              閉じる
       - if user_signed_in?
+        = link_to "マイフォルダ", "/users/#{current_user.id}/myrecipes"
         = link_to "レシピを書く", new_recipe_path, class: 'btn'
       - else
         = link_to "ログインしてレシピを書く", new_user_session_path, class: 'btn'

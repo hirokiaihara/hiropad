@@ -1,0 +1,5 @@
+.main
+  .container
+    - @myrecipes.each do |myrecipe|
+      - recipe = Recipe.find_by(id: myrecipe.recipe_id)
+      = recipe.title

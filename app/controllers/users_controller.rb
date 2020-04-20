@@ -11,6 +11,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def myrecipes
+    @myrecipes = Myrecipe.where(user_id: current_user.id)
+  end
+
   private
 
   def user_params

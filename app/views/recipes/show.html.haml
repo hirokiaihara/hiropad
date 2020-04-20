@@ -1,5 +1,10 @@
 .main.show__recipe__page
   .container
+    - if user_signed_in?
+      - if Myrecipe.find_by(user_id: current_user.id, recipe_id: @recipe.id)
+        = link_to "マイレシピから削除", "/myrecipes/#{@recipe.id}/destroy", {method: "post"}
+      - else
+        = link_to "マイレシピに保存する", "/myrecipes/#{@recipe.id}/create", {method: "post"}
     = @recipe.user.name
     = @recipe.title
     = image_tag @recipe.top_image.url
@@ -23,10 +28,10 @@
             = image_tag report.report_image.url
           .field
             = report.comment
-    #open
+    #open-report-modal
       つくれぽを書く
-    #mask.hidden
-      %section#modal
+    #report-mask.hidden
+      %section#report-modal
         %h2 つくれぽを投稿しよう！
         .new__report__form__body
           =form_for [@recipe, @report] do |f|
@@ -45,7 +50,7 @@
               
             = f.text_area :comment
             = f.submit "つくれぽを投稿する"
-        #close 閉じる
+        #close-report-modal 閉じる
     
     
     
