@@ -43,7 +43,7 @@
 ### Association
 - belongs_to :recipe
 
-## ingredientsテーブル
+## foodsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -62,6 +62,17 @@
 |comment|text|null: false|
 |recipe_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false|
+
+### Association
+- belongs_to :recipe
+- belongs_to :user
+
+## myrecipesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user_id|intrger|null: false|
+|recipe_id|integer|null: false|
 
 ### Association
 - belongs_to :recipe
