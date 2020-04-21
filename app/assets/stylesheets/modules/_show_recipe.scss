@@ -1,0 +1,180 @@
+//レシピ詳細表示
+.show__recipe__page {
+  a {
+    color: $orenge;
+  }
+  a:hover {
+    opacity: 0.8;
+  }
+  .upper-flex-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  .color {
+    color: $font_color;
+  }
+  &__title__field {
+    padding: 10px 20px;
+    font-size: 30px;
+    font-weight: bold;
+    color: $green;
+  }
+  &__myrecipe__field {
+    padding: 10px 13px;
+    a {
+      display: inline-block;
+      width: 180px;
+      height: 30px;
+      padding: 3px 12px;
+      border: solid 1px $border_color;
+      border-radius: 3px;
+      background-color: $main_color;
+      font-size: 15px;
+      color: $font_color;
+    }
+    a:hover {
+      opacity: 0.8;
+    }
+  }
+  .center-flex-container {
+    display: flex;
+  }
+  .row-field {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__top_image__field {
+    margin-left: 20px;
+    img {
+      width: 280px;
+    }
+  }
+  &__introduction__field {
+    padding: 5px 20px;
+    font-size: 18px;
+    color: $font_color;
+    width: 500px;
+  }
+  &__foods__field {
+    margin: 30px 20px;
+    color: $font_color;
+    width: 300px;
+    h3 {
+      font-size: 25px;
+      font-weight: bold;
+    }
+    .upper-field {
+      padding-bottom: 5px;
+      border-bottom: 1px solid ;
+    }
+    .row-field {
+      margin-top: 2px;
+      padding-bottom: 5px;
+      border-bottom: 1px solid;
+    }
+  }
+  &__makes__field {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 20px;
+    color: $font_color;
+    font-size: 15px;
+    span {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    &__content {
+      margin-left: 10px;
+      img {
+        width: 140px;
+      }
+      .text-box {
+        margin-left: 5px;
+        width: 140px;
+      }
+    }
+  }
+  &__row__flex__field {
+    display: flex;
+    color: $font_color;
+    margin-left: 20px;
+    padding-bottom: 20px;
+    h3 {
+      font-size: 20px;
+      font-weight: bold;
+      padding: 10px 0 10px;
+    }
+    .left-field {
+      width: 280px;
+    }
+    .right-field {
+      width: 280px;
+      margin-left: 20px;
+    }
+  }
+  .date {
+    margin-left: 20px;
+  }
+  .delete-btn {
+    display: inline-block;
+    margin: 15px 20px;
+    height: 32px;
+    background-color: $orenge;
+    padding: 5px;
+    color: #ffffff;
+    font-weight: bold;
+    float: right;
+  }
+  .delete-btn:hover {
+    opacity: 0.8;
+  }
+  .clear {
+    clear: right;
+  }
+  .show__reports__container {
+    color: $font_color;
+    
+    padding-bottom: 20px;
+    h2 {
+      background-color: $main_color;
+      border: solid 1px $border_color;
+      padding: 5px 20px;
+    }
+    &--flex {
+      display: flex;
+    }
+    .report__box {
+      margin-top: 5px;
+      margin-left: 20px;
+      border: solid 1px $border_color;
+      border-radius: 3px;
+      padding: 5px;
+      .date-box {
+        font-size: 10px;
+        float: right;
+      }
+      img {
+        width: 140px;
+      }
+      &__text__box {
+        width: 140px;
+      }
+    }
+  }
+  .make__report__container {
+    padding-bottom: 20px;
+  }
+  .open-btn {
+    width: 140px;
+    border: solid 1px $border_color;
+    border-radius: 3px;
+    background-color: #ececec;
+    padding: 3px 10px;
+    margin-left: 20px;
+    font-size: 13px;
+    margin: 0px auto;
+  }
+  .open-btn:hover {
+    opacity: 0.8;
+  }
+}

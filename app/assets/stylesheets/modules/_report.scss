@@ -35,16 +35,36 @@ img#top_img_prev-r, img.top_present_img-r {
   margin: 0 auto;
   z-index: 2;
   transition: 0.4s;
+  h2 {
+    font-weight: bold;
+  }
+  i {
+    padding: 20px;
+  }
+  textarea {
+    padding: 5px;
+    width: 200px;
+  }
+  .submit-btn {
+    background-color: $orenge;
+    color: #ffffff;
+    padding: 3px 5px;
+    width: 200px;
+    cursor: pointer;
+  }
+  .submit-btn:hover {
+    opacity: 0.8;
+  }
+  #close-report-modal {
+    margin-top: 5px;
+  }
 }
-
 #report-modal p {
   margin: 0 0 20px;
 }
-
 #report-mask.hidden {
   display: none;
 }
-
 #report-modal.hidden {
   transform: translate(0, -500px);
 }

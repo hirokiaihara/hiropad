@@ -35,7 +35,6 @@
                         = food.text_field :food_name, class: "js-file", placeholder: "例)豚肉、醤油"
                       .js-file_group{"data-index" => "#{food.index}"}
                         = food.text_field :amount, class: "js-file", placeholder: "例)100g, 小さじ1"
-                        
                 #add-btn
                   行を追加
                 #hidden-message
@@ -146,42 +145,6 @@
                         = make.file_field :image, class: 'js-file hidden'  
                 .text-box
                   %textarea{type: "text", name: "recipe[makes_attributes][5][how_make]", id: "recipe_makes_attributes_5_how_make", placeholder: "60字以内"}
-              .makes-content
-                %h3 7
-                %label(for="recipe_makes_attributes_6_image")
-                  #image-box7
-                    #previews7
-                      - if @recipe.persisted?
-                        - @recipe.makes.each_with_index do |image, i|
-                          = image_tag image.image.url, data: { index: i }, width: "140"
-                      -else 
-                        .image-box.present_img7
-                          %i.fas.fa-edit
-                          写真を載せる
-                    = f.fields_for :makes do |make|
-                      .js-file_group{"data-index" => "#{make.index}"}
-                        = make.file_field :image, class: 'js-file hidden'  
-                .text-box
-                  %textarea{type: "text", name: "recipe[makes_attributes][6][how_make]", id: "recipe_makes_attributes_6_how_make", placeholder: "60字以内"}
-              .makes-content
-                %h3 8
-                %label(for="recipe_makes_attributes_7_image")
-                  #image-box8
-                    #previews8
-                      - if @recipe.persisted?
-                        - @recipe.makes.each_with_index do |image, i|
-                          = image_tag image.image.url, data: { index: i }, width: "140"
-                      -else 
-                        .image-box.present_img8
-                          %i.fas.fa-edit
-                          写真を載せる
-                    = f.fields_for :makes do |make|
-                      .js-file_group{"data-index" => "#{make.index}"}
-                        = make.file_field :image, class: 'js-file hidden'  
-                .text-box
-                  %textarea{type: "text", name: "recipe[makes_attributes][7][how_make]", id: "recipe_makes_attributes_7_how_make", placeholder: "60字以内"}
-                  
-              
         .textarea__field
           .field--left
             %p コツ・ポイント
