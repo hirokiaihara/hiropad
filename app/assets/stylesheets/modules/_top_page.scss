@@ -24,6 +24,10 @@ input {
   border-radius: 3px;
   border: 1px solid $border_color;
 }
+textarea {
+  border-radius: 3px;
+  border: 1px solid $border_color;
+}
 .btn {
   cursor: pointer;
   border-radius: 3px;

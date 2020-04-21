@@ -14,9 +14,6 @@ textarea.hidden {
 img#top_img_prev, img.top_present_img {
   width: 280px;
 }
-.top-image-field {
-  width: 280px;
-}
 #hidden-background-text, #hidden-point-text {
   display: none;
 }
@@ -31,14 +28,102 @@ img#top_img_prev, img.top_present_img {
     font-weight: normal;
   }  
 }
+.new__recipe__form__body {
+  padding-left: 15px;
+  .title__field {
+    padding: 30px 0px 10px;
+    input {
+      width: 280px;
+      height: 30px;
+      padding: 3px;
+      background-color: #ffffd3;
+    }
+  }
+  .new__recipe__form__body--flex{
+    display: flex;
+  }
+  .top-image-field {
+    width: 280px;
+    .fas {
+      padding-top: 70px;
+      padding-left: 10px;
+    }
+    p {
+      font-size: 15px;
+      padding-left: 10px;
+    }
+  } 
+  .right-contents {
+    margin-top: 30px;
+    margin-left: 30px;
+    .introduction__field {
+      textarea {
+        height: 100px;
+        width: 350px;
+        border-radius: 3px;
+        background-color: #ffffd3;
+        padding: 3px;
+      }
+    }
+    .foods-field {
+      h3 {
+        padding: 3px;
+        color: $font_color;
+      }
+      span {
+        margin-top: 5px;
+        background-color: $main_color;
+        width: 170px;
+        height: 25px;
+        padding: 3px;
+        border-radius: 3px;
+        text-align: center;
+        display: inline-block;
+        font-size: 15px;
+        font-weight: bold;
+        color: $font_color;
+      }
+      .left {
+        margin-left: 3px;
+      }
+      .right {
+        margin-left: 1px;
+      }
+      input {
+        padding: 3px;
+        font-size: 15px;
+        background-color: #ffffd3;
+      }
+      .js-file_group {
+        margin-left: 3px;
+      }
+      #add-btn {
+        margin-top: 5px;
+        margin-left: 3px;
+        width: 70px;
+        border: 1px solid $border_color;
+        border-radius: 2px;
+        font-size: 15px;
+        padding-left: 5px;
+        background-color: #ececec;
+        opacity: 0.6;
+      }
+      .far {
+        background-color: #ececec;
+        opacity: 0.6;
+      }
+    }    
+  }
+}
 .makes-field {
   &-container {
-    width: 600px;
     display: flex;
     flex-wrap: wrap;
-    
+    h3 {
+      color: $font_color;
+    }
     .makes-content {
-      width: 140px;
+      margin-left: 10px;
       .image-box {
         width: 140px;
         height: 190px;
@@ -46,13 +131,53 @@ img#top_img_prev, img.top_present_img {
         background-color: $main-color;
         opacity: 0.4;
         font-size: 15px;
+        padding: 3px;
       }
       .text-box {
         textarea {
           width: 140px;
           height: 120px;
+          background-color: #ffffd3;
+          padding: 3px;
         }
       }
     }
+  }
+}
+.textarea__field {
+  display: flex;
+  margin-top: 10px;
+  .field--left, .field--right {
+    margin-left: 20px;
+  }
+  p, i {
+    color: $font_color;
+  }
+  textarea {
+    width: 300px;
+    height: 100px;
+  }
+  .btn {
+    margin-top: 5px;
+    margin-left: 3px;
+    width: 70px;
+    border: 1px solid $border_color;
+    border-radius: 2px;
+    font-size: 15px;
+    padding-left: 5px;
+    background-color: #ececec;
+    opacity: 0.6;
+  }
+}
+.submit-field {
+  padding: 30px;
+  text-align: center;
+  .btn {
+    width: 300px;
+    height: 50px;
+    background-color: $orenge;
+    padding: 5px;
+    color: #ffffff;
+    font-weight: bold;
   }
 }
