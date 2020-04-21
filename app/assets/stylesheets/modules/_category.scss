@@ -11,8 +11,9 @@
 #category-modal {
   background: #fff;
   color: #555;
-  width: 300px;
-  padding: 40px;
+  width: 600px;
+  border: solid 1px $border_color;
+  border-top: solid 5px $green;
   border-radius: 4px;
   position: absolute;
   top: 40px;
@@ -21,10 +22,37 @@
   margin: 0 auto;
   z-index: 2;
   transition: 0.4s;
+  h2 {
+    color: $font_color;
+    font-size: 15px;
+    padding: 5px 10px;
+    border-bottom: 1px solid $green;
+  }
+  .upper__field, .row__field {
+    display: flex;
+    padding-left: 10px;
+    padding-top: 10px;
+    &__container, &__container {
+      width: 25%;
+      .index {
+        font-weight: bold;
+        font-size: 15px;
+        color: $font_color;
+        padding-bottom: 5px;
+      }
+      .contents {
+        padding-left: 10px;
+      }
+    }
+  }
+  #close-category-modal.btn {
+    width: 70px;
+    float: right;
+  }
 }
 
 #category-modal p {
-  margin: 0 0 20px;
+  line-height: 30px;
 }
 
 #category-mask.hidden {

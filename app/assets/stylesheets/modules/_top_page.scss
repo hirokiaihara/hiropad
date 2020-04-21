@@ -1,0 +1,266 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: $main_color;
+}
+.main {
+  background-color: $main_color;
+  width: 100%;
+}
+.container {
+  width: 1000px;
+  margin: 0 auto;
+  background-color: #ffffff;
+}
+//共通パーツ
+a {
+  text-decoration: none;
+  color: #401c00;
+}
+a:hover { color: #ff8000; }
+
+input {
+  border-radius: 3px;
+  border: 1px solid $border_color;
+}
+.btn {
+  cursor: pointer;
+  border-radius: 3px;
+}
+.btn:hover { color: #ff8000; }
+
+.field--flex {
+  display: flex;
+}
+.hideen {
+  display: none;
+ }
+
+//ヘッダー
+header {
+  background-color: #ffffff;
+  height: 35px;
+  border-bottom: 1px solid $border_color;
+  line-height: 34px;
+  .user__field {
+    float: right;
+  }
+}
+.service__header {
+  background-color: $main-color;
+  height: 70px;
+  display: flex;
+  width: 1000px;
+  margin: 0 auto;
+
+  .link-logo {
+    width: 290px;
+    color: black;
+    a {
+      display: flex;
+      h1 {
+        font-size: 25px;
+        font-weight: bold;
+        margin-top: 5px;
+        margin-left: 5px;
+      }
+      p {
+        margin-left: 5px;
+        font-size: 15px;
+      }
+      img {
+        height: 60px;
+        margin: 5px 5px;
+      }
+    }
+  }
+  .search__field {
+    #keyword {
+      width: 290px;
+      margin-top: 5px;
+      padding: 3px;
+    }
+    .btn {
+      height: 32px;
+      padding: 0 7px;
+    }
+    #open-category-modal {
+      color: $font_color;
+      width: 180px;
+      margin-left: 140px;
+    }
+    #open-category-modal:hover { 
+      color: #ff8000; 
+    }
+  }
+  .service__field {
+    line-height: 70px;
+    margin-left: 70px;
+    font-size: 15px;
+    a.btn {
+      background-color: $green;
+      color: #ffffff;
+      padding: 10px 7px;
+      margin-left: 5px;
+    }
+  }
+}
+.index__recipe__page {
+  border: solid 1px $border_color;
+  border-top: solid 5px $green;
+  border-radius: 5px;
+  .title__field {
+    border-bottom: 1px solid $border_color;
+    font-size: 20px;
+    padding: 5px;
+    color: $green;
+  }
+  .sub__title {
+    background-color: $main_color;
+    padding: 5px;
+  }
+  &__ranks__field {
+    &--flex {
+      display: flex;
+    }
+    &__first__box {
+      width: 28%;
+      margin: 10px;
+      .image-box {
+        position: relative;
+        i {
+          position: absolute;
+          top: -7px;
+          left: -3px;
+          font-size: 40px;
+          color: gold;
+          background-color: #ffffff;
+          padding: 3px;
+          border-radius: 5px;
+        }
+        span {
+          position: absolute;
+          top: 4px;
+          left: 19px;
+          color: #ffffff;
+          font-size: 20px;
+        }
+        img {
+          height: 200px;
+          width: 200px;
+          object-fit: cover;
+          border-radius: 5px;
+        }
+      }
+      .image-box:hover {opacity: 0.7;}
+      .title-box {
+        color: $green;
+      }
+    }
+    &__after__box {
+      width: 18%;
+      margin: 10px;
+      .image-box {
+        position: relative;
+        i {
+          position: absolute;
+          top: -7px;
+          left: -3px;
+          font-size: 30px;
+          color: gold;
+          background-color: #ffffff;
+          padding: 3px;
+          border-radius: 5px;
+        }
+        #silver {color: silver;}
+        #bronze {color: goldenrod;}
+        #fource {color: $green;}
+        #fifth {color: $orenge;}
+        span {
+          position: absolute;
+          top: 3px;
+          left: 15px;
+          color: #ffffff;
+          font-size: 13px;
+        }
+        img {
+          height: 120px;
+          width: 120px;
+          object-fit: cover;
+          border-radius: 5px;
+        }
+      }
+      .image-box:hover {opacity: 0.7;}
+      .title-box {
+        color: $green;
+      }
+    }
+  }
+  &__category__field {
+    border-top: solid 1px $border_color;
+    #main_color {
+      background-color: $main_color;
+    }
+    h2 {
+      color: $font_color;
+      font-size: 15px;
+    }
+    .upper__field, .row__field {
+      display: flex;
+      padding-left: 30px;
+      &__container {
+        width: 25%;
+        .index {
+          font-weight: bold;
+          font-size: 20px;
+          color: $font_color;
+          padding-top: 10px;
+        }
+        .contents {
+          padding-left: 15px;
+          padding-bottom: 20px;
+          p {
+            line-height: 30px;
+          }
+        }
+      }
+    }
+  }
+  &__new__field {
+    border-top: solid 5px $green;
+    border-radius: 5px;
+    &--flex {
+      display: flex;
+      flex-wrap: wrap;
+      &__recipe__box {
+        width: 15%;
+        margin: 7px;
+        .image-box {
+          img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+          }
+        }
+        .image-box:hover {opacity: 0.7;}
+        .title-box {
+          color: $green;
+        }
+      }
+    }
+  }
+}
+//フッター
+footer {
+  padding-top: 5px;
+  width: 1000px;
+  margin: 0 auto;
+  a {
+    float: right;
+  }
+  .clear {
+    clear: right;
+  }
+}

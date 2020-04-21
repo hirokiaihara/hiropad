@@ -18,6 +18,6 @@ class Recipe < ApplicationRecord
   end
 
   def self.create_ranks
-    Recipe.find(Report.group(:recipe_id).order('count(recipe_id) desc').limit(3).pluck(:recipe_id))
+    Recipe.find(Report.group(:recipe_id).order('count(recipe_id) desc').limit(5).pluck(:recipe_id))
   end
 end
