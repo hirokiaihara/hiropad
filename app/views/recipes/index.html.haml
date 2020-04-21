@@ -5,9 +5,8 @@
         %i.fas.fa-utensils 
         人気レシピ
       .sub__title 
-        = link_to "" do
-          %i.far.fa-flag
-          つくれぽの数が多いレシピ(ランキングをもっと見る) ▶︎
+        %i.far.fa-flag
+        つくれぽの数が多いレシピ ▶︎
       .index__recipe__page__ranks__field--flex
         - if @ranks[0].present? && @ranks[1].present? && @ranks[2].present? && @ranks[3].present? && @ranks[4].present?
           .index__recipe__page__ranks__field__first__box
@@ -162,9 +161,8 @@
         %i.fas.fa-utensils 
           新着レシピ
       .sub__title
-        = link_to "" do
-          %i.far.fa-flag
-          新着レシピをもっと見る ▶︎
+        %i.far.fa-flag
+        最新レシピを毎日更新 ▶︎
       .index__recipe__page__new__field--flex
         - if @recipes.present?
           - @recipes.each do |recipe|
