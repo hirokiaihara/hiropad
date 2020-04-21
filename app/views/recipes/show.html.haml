@@ -56,7 +56,7 @@
     .clear
     .show__reports__container
       %h2 みんなのつくりましたフォトレポート「つくれぽ」
-      - if @reports
+      - if @reports.present?
         .show__reports__container--flex
           - @reports.each do |report|
             .report__box

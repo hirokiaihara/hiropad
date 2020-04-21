@@ -166,13 +166,16 @@
           %i.far.fa-flag
           新着レシピをもっと見る ▶︎
       .index__recipe__page__new__field--flex
-        - @recipes.each do |recipe|
-          .index__recipe__page__new__field--flex__recipe__box
-            = link_to recipe_path(recipe.id) do
-              .image-box
-                = image_tag recipe.top_image.url
-              .title-box
-                = recipe.title
-              %span by
-              = recipe.user.name
+        - if @recipes.present?
+          - @recipes.each do |recipe|
+            .index__recipe__page__new__field--flex__recipe__box
+              = link_to recipe_path(recipe.id) do
+                .image-box
+                  = image_tag recipe.top_image.url
+                .title-box
+                  = recipe.title
+                %span by
+                = recipe.user.name
+        - else 
+          %p 投稿レシピがまだありません
     

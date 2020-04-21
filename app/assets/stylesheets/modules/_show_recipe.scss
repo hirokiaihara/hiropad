@@ -133,7 +133,9 @@
   }
   .show__reports__container {
     color: $font_color;
-    
+    p {
+      margin-left: 20px;
+    }
     padding-bottom: 20px;
     h2 {
       background-color: $main_color;

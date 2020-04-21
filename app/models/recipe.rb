@@ -7,7 +7,8 @@ class Recipe < ApplicationRecord
   belongs_to :user
   has_many :foods, dependent: :destroy
   has_many :makes, dependent: :destroy
-  has_many :reports
+  has_many :reports, dependent: :destroy
+  has_many :myrecipes, dependent: :destroy
 
   accepts_nested_attributes_for :foods, allow_destroy: true
   accepts_nested_attributes_for :makes, allow_destroy: true
