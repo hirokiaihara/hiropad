@@ -1,5 +1,8 @@
-//レシピ詳細表示
+//レシピ詳細表示ページ
 .show__recipe__page {
+  background-color: #ffffff;
+  border: solid 1px $border_color;
+  border-radius: 3px;
   a {
     color: $orenge;
   }
@@ -54,6 +57,12 @@
     font-size: 18px;
     color: $font_color;
     width: 500px;
+    span {
+      font-size: 15px;
+    }
+    a {
+      border-bottom: 1px solid;
+    }
   }
   &__foods__field {
     margin: 30px 20px;
@@ -133,7 +142,7 @@
   }
   .show__reports__container {
     color: $font_color;
-    p {
+    p.message {
       margin-left: 20px;
     }
     padding-bottom: 20px;
@@ -160,6 +169,12 @@
       }
       &__text__box {
         width: 140px;
+        span {
+          font-size: 10px;
+        }
+        a {
+          border-bottom: solid 1px;
+        }
       }
     }
   }

@@ -1,4 +1,4 @@
-.user__form
+.wrapper
   .container
     .users__form__body
       %h2 プロフィールの変更
@@ -22,3 +22,4 @@
         .field
           = f.submit "更新", class: 'btn'
         = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'
+  = render 'layouts/side_bar'

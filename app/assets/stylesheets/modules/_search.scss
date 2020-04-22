@@ -1,0 +1,68 @@
+//検索結果ページ
+.search__result__page {
+  background-color: #ffffff;
+  border: solid 1px $border_color;
+  border-radius: 3px;
+  &__body {
+    &__title__field {
+      margin-left: 20px;
+      padding-top: 20px;
+      h1 {
+        font-size: 30px;
+        color: $green;
+        font-weight: bold;
+        display: inline-block;
+      }
+      span {
+        color: $font_color;
+      }
+    }
+    &__recipes__container {
+      &__content {
+        margin: 10px 20px;
+      a:hover {
+        opacity: 0.8;
+      }
+        &--left__box {
+          float: left;
+          margin-right: 20px;
+           img {
+             height: 180px;
+             width: 120px;
+             object-fit: cover;
+           }
+        }
+        &--right__box {
+          &--upper {
+            a {
+              border-bottom: 1px solid;
+            }
+            a.title-link {
+              color: $green;
+              font-size: 25px;
+            }
+            span {
+              color: $font_color;
+              font-size: 15px;
+            }
+            a.user-link {
+              color: $orenge;
+              font-size: 20px;
+            }
+          }
+          &--center {
+            color: $font_color;
+            width: 600px;
+          }
+          &--row {
+            color: $sub_font_color;
+            font-size: 15px;
+          }
+        }
+        .clear {
+          clear: left;
+        }
+      }
+    }
+  }
+}

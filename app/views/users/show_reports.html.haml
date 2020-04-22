@@ -1,4 +1,4 @@
-.main
+.wrapper
   .container
     = @user.name
     さんのつくれぽ一覧
@@ -11,3 +11,4 @@
             削除する
     - else
       %p 投稿がまだありません
+  = render 'layouts/side_bar'

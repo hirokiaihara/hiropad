@@ -1,179 +1,181 @@
-.main
-  .container.index__recipe__page
-    .index__recipe__page__ranks__field
-      .title__field
-        %i.fas.fa-utensils 
-        人気レシピ
-      .sub__title 
-        %i.far.fa-flag
-        つくれぽの数が多いレシピ ▶︎
-      .index__recipe__page__ranks__field--flex
-        - if @ranks[0].present? && @ranks[1].present? && @ranks[2].present? && @ranks[3].present? && @ranks[4].present?
-          .index__recipe__page__ranks__field__first__box
-            = link_to recipe_path(@ranks[0].id) do
-              .image-box
-                %i.fas.fa-crown
-                %span 1
-                = image_tag @ranks[0].top_image.url
-              .title-box
-                = @ranks[0].title
-              %span by
-              = @ranks[0].user.name
-          .index__recipe__page__ranks__field__after__box
-            = link_to recipe_path(@ranks[1].id) do
-              .image-box
-                %i.fas.fa-crown#silver
-                %span 2
-                = image_tag @ranks[1].top_image.url
-              .title-box
-                = @ranks[1].title
-              %span by
-              = @ranks[1].user.name
-          .index__recipe__page__ranks__field__after__box
-            = link_to recipe_path(@ranks[2].id) do
-              .image-box
-                %i.fas.fa-crown#bronze
-                %span 3
-                = image_tag @ranks[2].top_image.url
-              .title-box
-                = @ranks[2].title
-              %span by
-              = @ranks[2].user.name
-          .index__recipe__page__ranks__field__after__box
-            = link_to recipe_path(@ranks[3].id) do
-              .image-box
-                %i.fas.fa-crown#fource
-                %span 4
-                = image_tag @ranks[3].top_image.url
-              .title-box
-                = @ranks[3].title
-              %span by
-              = @ranks[3].user.name
-          .index__recipe__page__ranks__field__after__box
-            = link_to recipe_path(@ranks[4].id) do
-              .image-box
-                %i.fas.fa-crown#fifth
-                %span 5
-                = image_tag @ranks[4].top_image.url
-              .title-box
-                = @ranks[4].title
-              %span by
-              = @ranks[4].user.name
-        - else
-          %p ランキングはまだありません
-          
-    .index__recipe__page__category__field
-      .title__field#main_color
-        %h2 カテゴリーから探す ▶︎
-      .upper__field
-        .upper__field__container
-          .index
-            %i.fas.fa-carrot 
-            野菜
-          .contents
-            %p 
-              = link_to "キャベツ", search_recipes_path(keyword: "キャベツ")
-            %p 
-              = link_to "白菜", search_recipes_path(keyword: "白菜")
-            %p
-              = link_to "じゃがいも", search_recipes_path(keyword: "じゃがいも")
-        .upper__field__container
-          .index
-            %i.fas.fa-drumstick-bite
-            お肉の料理
-          .contents
-            %p
-              = link_to "豚肉", search_recipes_path(keyword: "豚肉")
-            %p
-              = link_to "牛肉", search_recipes_path(keyword: "牛肉")
-            %p
-              = link_to "鶏肉", search_recipes_path(keyword: "鶏肉")
-        .upper__field__container
-          .index
-            %i.fas.fa-fish 
-            お魚の料理
-          .contents
-            %p 
-              = link_to "さば", search_recipes_path(keyword: "さば")
-            %p 
-              = link_to "アジ", search_recipes_path(keyword: "アジ")
-            %p
-              = link_to "イカ", search_recipes_path(keyword: "イカ")
-        .upper__field__container
-          .index
-            %i.fas.fa-apple-alt
-            サラダ
-          .contents
-            %p 
-              = link_to "生春巻き", search_recipes_path(keyword: "生春巻き")
-            %p 
-              = link_to "和風サラダ", search_recipes_path(keyword: "和風サラダ")
-            %p
-              = link_to "洋風サラダ", search_recipes_path(keyword: "洋風サラダ")
-      .row__field
-        .row__field__container
-          .index
-            %i.fas.fa-hamburger
-            ごはん
-          .contents
-            %p 
-              = link_to "丼", search_recipes_path(keyword: "丼")
-            %p 
-              = link_to "ピラフ", search_recipes_path(keyword: "ピラフ")
-            %p
-              = link_to "チャーハン", search_recipes_path(keyword: "チャーハン")
-        .row__field__container
-          .index
-            %i.fas.fa-pizza-slice
-            パスタ・グラタン
-          .contents
-            %p
-              = link_to "パスタ", search_recipes_path(keyword: "パスタ")
-            %p
-              = link_to "グラタン", search_recipes_path(keyword: "グラタン")
-            %p
-              = link_to "ニョッキ", search_recipes_path(keyword: "ニョッキ")
-        .row__field__container
-          .index
-            %i.fas.fa-bacon 
-            麺
-          .contents
-            %p 
-              = link_to "そば", search_recipes_path(keyword: "そば")
-            %p 
-              = link_to "うどん", search_recipes_path(keyword: "うどん")
-            %p
-              = link_to "ラーメン", search_recipes_path(keyword: "ラーメン")
-        .row__field__container
-          .index
-            %i.fas.fa-bread-slice
-            パン・ケーキ
-          .contents
-            %p 
-              = link_to "パン", search_recipes_path(keyword: "パン")
-            %p 
-              = link_to "ホットケーキ", search_recipes_path(keyword: "ホットケーキ")
-            %p
-              = link_to "ケーキ", search_recipes_path(keyword: "ケーキ")
-      
-    .index__recipe__page__new__field
-      .title__field
-        %i.fas.fa-utensils 
-          新着レシピ
-      .sub__title
-        %i.far.fa-flag
-        最新レシピを毎日更新 ▶︎
-      .index__recipe__page__new__field--flex
-        - if @recipes.present?
-          - @recipes.each do |recipe|
-            .index__recipe__page__new__field--flex__recipe__box
-              = link_to recipe_path(recipe.id) do
+.wrapper
+  .container
+    .index__recipe__page
+      .index__recipe__page__ranks__field
+        .title__field
+          %i.fas.fa-utensils 
+          人気レシピ
+        .sub__title 
+          %i.far.fa-flag
+          つくれぽの数が多いレシピ ▶︎
+        .index__recipe__page__ranks__field--flex
+          - if @ranks[0].present? && @ranks[1].present? && @ranks[2].present? && @ranks[3].present? && @ranks[4].present?
+            .index__recipe__page__ranks__field__first__box
+              = link_to recipe_path(@ranks[0].id) do
                 .image-box
-                  = image_tag recipe.top_image.url
+                  %i.fas.fa-crown
+                  %span 1
+                  = image_tag @ranks[0].top_image.url
+                .title-box
+                  = @ranks[0].title
+                %span by
+                = @ranks[0].user.name
+            .index__recipe__page__ranks__field__after__box
+              = link_to recipe_path(@ranks[1].id) do
+                .image-box
+                  %i.fas.fa-crown#silver
+                  %span 2
+                  = image_tag @ranks[1].top_image.url
+                .title-box
+                  = @ranks[1].title
+                %span by
+                = @ranks[1].user.name
+            .index__recipe__page__ranks__field__after__box
+              = link_to recipe_path(@ranks[2].id) do
+                .image-box
+                  %i.fas.fa-crown#bronze
+                  %span 3
+                  = image_tag @ranks[2].top_image.url
+                .title-box
+                  = @ranks[2].title
+                %span by
+                = @ranks[2].user.name
+            .index__recipe__page__ranks__field__after__box
+              = link_to recipe_path(@ranks[3].id) do
+                .image-box
+                  %i.fas.fa-crown#fource
+                  %span 4
+                  = image_tag @ranks[3].top_image.url
+                .title-box
+                  = @ranks[3].title
+                %span by
+                = @ranks[3].user.name
+            .index__recipe__page__ranks__field__after__box
+              = link_to recipe_path(@ranks[4].id) do
+                .image-box
+                  %i.fas.fa-crown#fifth
+                  %span 5
+                  = image_tag @ranks[4].top_image.url
+                .title-box
+                  = @ranks[4].title
+                %span by
+                = @ranks[4].user.name
+          - else
+            %p ランキングはまだありません
+            
+      .index__recipe__page__category__field
+        .title__field#main_color
+          %h2 カテゴリーから探す ▶︎
+        .upper__field
+          .upper__field__container
+            .index
+              %i.fas.fa-carrot 
+              野菜
+            .contents
+              %p 
+                = link_to "キャベツ", search_recipes_path(keyword: "キャベツ")
+              %p 
+                = link_to "白菜", search_recipes_path(keyword: "白菜")
+              %p
+                = link_to "じゃがいも", search_recipes_path(keyword: "じゃがいも")
+          .upper__field__container
+            .index
+              %i.fas.fa-drumstick-bite
+              お肉の料理
+            .contents
+              %p
+                = link_to "豚肉", search_recipes_path(keyword: "豚肉")
+              %p
+                = link_to "牛肉", search_recipes_path(keyword: "牛肉")
+              %p
+                = link_to "鶏肉", search_recipes_path(keyword: "鶏肉")
+          .upper__field__container
+            .index
+              %i.fas.fa-fish 
+              お魚の料理
+            .contents
+              %p 
+                = link_to "さば", search_recipes_path(keyword: "さば")
+              %p 
+                = link_to "アジ", search_recipes_path(keyword: "アジ")
+              %p
+                = link_to "イカ", search_recipes_path(keyword: "イカ")
+          .upper__field__container
+            .index
+              %i.fas.fa-apple-alt
+              サラダ
+            .contents
+              %p 
+                = link_to "生春巻き", search_recipes_path(keyword: "生春巻き")
+              %p 
+                = link_to "和風サラダ", search_recipes_path(keyword: "和風サラダ")
+              %p
+                = link_to "洋風サラダ", search_recipes_path(keyword: "洋風サラダ")
+        .row__field
+          .row__field__container
+            .index
+              %i.fas.fa-hamburger
+              ごはん
+            .contents
+              %p 
+                = link_to "丼", search_recipes_path(keyword: "丼")
+              %p 
+                = link_to "ピラフ", search_recipes_path(keyword: "ピラフ")
+              %p
+                = link_to "チャーハン", search_recipes_path(keyword: "チャーハン")
+          .row__field__container
+            .index
+              %i.fas.fa-pizza-slice
+              パスタ・グラタン
+            .contents
+              %p
+                = link_to "パスタ", search_recipes_path(keyword: "パスタ")
+              %p
+                = link_to "グラタン", search_recipes_path(keyword: "グラタン")
+              %p
+                = link_to "ニョッキ", search_recipes_path(keyword: "ニョッキ")
+          .row__field__container
+            .index
+              %i.fas.fa-bacon 
+              麺
+            .contents
+              %p 
+                = link_to "そば", search_recipes_path(keyword: "そば")
+              %p 
+                = link_to "うどん", search_recipes_path(keyword: "うどん")
+              %p
+                = link_to "ラーメン", search_recipes_path(keyword: "ラーメン")
+          .row__field__container
+            .index
+              %i.fas.fa-bread-slice
+              パン・ケーキ
+            .contents
+              %p 
+                = link_to "パン", search_recipes_path(keyword: "パン")
+              %p 
+                = link_to "ホットケーキ", search_recipes_path(keyword: "ホットケーキ")
+              %p
+                = link_to "ケーキ", search_recipes_path(keyword: "ケーキ")
+        
+      .index__recipe__page__new__field
+        .title__field
+          %i.fas.fa-utensils 
+            新着レシピ
+        .sub__title
+          %i.far.fa-flag
+          最新レシピを毎日更新 ▶︎
+        .index__recipe__page__new__field--flex
+          - if @recipes.present?
+            - @recipes.each do |recipe|
+              .index__recipe__page__new__field--flex__recipe__box
+                = link_to recipe_path(recipe.id) do
+                  .image-box
+                    = image_tag recipe.top_image.url
                 .title-box
                   = recipe.title
                 %span by
-                = recipe.user.name
-        - else 
-          %p 投稿レシピがまだありません
-    
+                = link_to user_path(recipe.user) do
+                  = recipe.user.name
+          - else 
+            %p 投稿レシピがまだありません
+  = render 'layouts/side_bar'

@@ -1,172 +1,174 @@
-.main.new__recipe__form
+.wrapper
   .container
-    .new__recipe__form__body
-      = form_for @recipe do |f|
-        .title__field
-          = f.text_field :title, placeholder: "タイトルを入力"
-        .new__recipe__form__body--flex
-          .top-image-field
-            %label(for="recipe_top_image")
-              .field
-                %img#top_img_prev
-              - if @recipe.top_image.present?
-                = image_tag @recipe.top_image.url, class: "top_present_img"
-              - else
-                .top-image-box.top_present_img
-                  %i.fas.fa-camera
-                  クリックして料理の写真を載せる
-                  %p 人や動物が写り込んだ写真、
-                  %p オリジナルでは無い物はご遠慮ください
-              = f.file_field :top_image, class: "hidden"
-          .right-contents
-            .introduction__field
-              = f.text_area :introduction, placeholder: "このレシピのキャッチコピーを入力(60字以内)" 
-            .foods-field
-              %h3 材料(何人分？)
-              = f.text_field :how_many, placeholder: "例)２人分"
-              .foods-field-upper
-                %span.left 食材・調味料
-                %span.right 分量
-              .foods-field-row
-                #food-field
-                  = f.fields_for :foods do |food|
-                    .field--flex
-                      .js-file_group{"data-index" => "#{food.index}"}
-                        = food.text_field :food_name, class: "js-file", placeholder: "例)豚肉、醤油"
-                      .js-file_group{"data-index" => "#{food.index}"}
-                        = food.text_field :amount, class: "js-file", placeholder: "例)100g, 小さじ1"
-                #add-btn
-                  行を追加
-                #hidden-message
-                  材料は15項目までです！
-        .makes-field
-          %h3 作り方
-          .field
-            .makes-field-container
-              .makes-content
-                %h3 1
-                %label(for="recipe_makes_attributes_0_image")
-                  #image-box1
-                    #previews1
-                      - if @recipe.persisted?
-                        - @recipe.makes.each_with_index do |image, i|
-                          = image_tag image.image.url, data: { index: i }, width: "140"
-                      -else 
-                        .image-box.present_img1
-                          %i.fas.fa-edit
-                          写真を載せる
-                    = f.fields_for :makes do |make|
-                      .js-file_group{"data-index" => "#{make.index}"}
-                        = make.file_field :image, class: 'js-file hidden'  
-                .text-box
-                  %textarea{type: "text", name: "recipe[makes_attributes][0][how_make]", id: "recipe_makes_attributes_0_how_make", placeholder: "60字以内"}
-              .makes-content
-                %h3 2
-                %label(for="recipe_makes_attributes_1_image")
-                  #image-box2
-                    #previews2
-                      - if @recipe.persisted?
-                        - @recipe.makes.each_with_index do |image, i|
-                          = image_tag image.image.url, data: { index: i }, width: "140"
-                      -else 
-                        .image-box.present_img2
-                          %i.fas.fa-edit
-                          写真を載せる
-                    = f.fields_for :makes do |make|
-                      .js-file_group{"data-index" => "#{make.index}"}
-                        = make.file_field :image, class: 'js-file hidden'  
-                .text-box
-                  %textarea{type: "text", name: "recipe[makes_attributes][1][how_make]", id: "recipe_makes_attributes_1_how_make", placeholder: "60字以内"}
-              .makes-content
-                %h3 3
-                %label(for="recipe_makes_attributes_2_image")
-                  #image-box3
-                    #previews3
-                      - if @recipe.persisted?
-                        - @recipe.makes.each_with_index do |image, i|
-                          = image_tag image.image.url, data: { index: i }, width: "140"
-                      -else 
-                        .image-box.present_img3
-                          %i.fas.fa-edit
-                          写真を載せる
-                    = f.fields_for :makes do |make|
-                      .js-file_group{"data-index" => "#{make.index}"}
-                        = make.file_field :image, class: 'js-file hidden'  
-                .text-box
-                  %textarea{type: "text", name: "recipe[makes_attributes][2][how_make]", id: "recipe_makes_attributes_2_how_make", placeholder: "60字以内"}
-              .makes-content
-                %h3 4
-                %label(for="recipe_makes_attributes_3_image")
-                  #image-box4
-                    #previews4
-                      - if @recipe.persisted?
-                        - @recipe.makes.each_with_index do |image, i|
-                          = image_tag image.image.url, data: { index: i }, width: "140"
-                      -else 
-                        .image-box.present_img4
-                          %i.fas.fa-edit
-                          写真を載せる
-                    = f.fields_for :makes do |make|
-                      .js-file_group{"data-index" => "#{make.index}"}
-                        = make.file_field :image, class: 'js-file hidden'  
-                .text-box
-                  %textarea{type: "text", name: "recipe[makes_attributes][3][how_make]", id: "recipe_makes_attributes_3_how_make", placeholder: "60字以内"}
-              .makes-content
-                %h3 5
-                %label(for="recipe_makes_attributes_4_image")
-                  #image-box5
-                    #previews5
-                      - if @recipe.persisted?
-                        - @recipe.makes.each_with_index do |image, i|
-                          = image_tag image.image.url, data: { index: i }, width: "140"
-                      -else 
-                        .image-box.present_img5
-                          %i.fas.fa-edit
-                          写真を載せる
-                    = f.fields_for :makes do |make|
-                      .js-file_group{"data-index" => "#{make.index}"}
-                        = make.file_field :image, class: 'js-file hidden'  
-                .text-box
-                  %textarea{type: "text", name: "recipe[makes_attributes][4][how_make]", id: "recipe_makes_attributes_4_how_make", placeholder: "60字以内"}
-              .makes-content
-                %h3 6
-                %label(for="recipe_makes_attributes_5_image")
-                  #image-box6
-                    #previews6
-                      - if @recipe.persisted?
-                        - @recipe.makes.each_with_index do |image, i|
-                          = image_tag image.image.url, data: { index: i }, width: "140"
-                      -else 
-                        .image-box.present_img6
-                          %i.fas.fa-edit
-                          写真を載せる
-                    = f.fields_for :makes do |make|
-                      .js-file_group{"data-index" => "#{make.index}"}
-                        = make.file_field :image, class: 'js-file hidden'  
-                .text-box
-                  %textarea{type: "text", name: "recipe[makes_attributes][5][how_make]", id: "recipe_makes_attributes_5_how_make", placeholder: "60字以内"}
-        .textarea__field
-          .field--left
-            %p コツ・ポイント
-            #hidden-point-text
-              = f.text_area :point, placeholder: "120字以内"
-              #remove-btn-left.btn
-                取消
-            #btn-field-left
-              %i.fas.fa-edit
-              クリックしてコツやポイントを入力
-          .field--right
-            %p このレシピの生い立ち
-            #hidden-background-text
-              = f.text_area :background, placeholder: "120字以内"
-              #remove-btn-right.btn
-                取消
-            #btn-field-right
-              %i.fas.fa-edit
-              クリックしてこのレシピが生まれた経緯などをを入力
-              %p 例)母秘伝のレシピを、家族好みの甘口に仕上げました。
-        .submit-field
-          = f.submit "レシピを公開する", class: "btn"
-    .side__bar
-      .side__bar__contentainer
-        .side__bar__container__content
+    .new__recipe__form
+      .new__recipe__form__body
+        = form_for @recipe do |f|
+          .title__field
+            = f.text_field :title, placeholder: "タイトルを入力"
+          .new__recipe__form__body--flex
+            .top-image-field
+              %label(for="recipe_top_image")
+                .field
+                  %img#top_img_prev
+                - if @recipe.top_image.present?
+                  = image_tag @recipe.top_image.url, class: "top_present_img"
+                - else
+                  .top-image-box.top_present_img
+                    %i.fas.fa-camera
+                    クリックして料理の写真を載せる
+                    %p 人や動物が写り込んだ写真、
+                    %p オリジナルでは無い物はご遠慮ください
+                = f.file_field :top_image, class: "hidden"
+            .right-contents
+              .introduction__field
+                = f.text_area :introduction, placeholder: "このレシピのキャッチコピーを入力(60字以内)" 
+              .foods-field
+                %h3 材料(何人分？)
+                = f.text_field :how_many, placeholder: "例)２人分"
+                .foods-field-upper
+                  %span.left 食材・調味料
+                  %span.right 分量
+                .foods-field-row
+                  #food-field
+                    = f.fields_for :foods do |food|
+                      .field--flex
+                        .js-file_group{"data-index" => "#{food.index}"}
+                          = food.text_field :food_name, class: "js-file", placeholder: "例)豚肉、醤油"
+                        .js-file_group{"data-index" => "#{food.index}"}
+                          = food.text_field :amount, class: "js-file", placeholder: "例)100g, 小さじ1"
+                  #add-btn.btn
+                    行を追加
+                  #hidden-message
+                    材料は15項目までです！
+          .makes-field
+            %h3 作り方
+            .field
+              .makes-field-container
+                .makes-content
+                  %h3 1
+                  %label(for="recipe_makes_attributes_0_image")
+                    #image-box1
+                      #previews1
+                        - if @recipe.persisted?
+                          - @recipe.makes.each_with_index do |image, i|
+                            = image_tag image.image.url, data: { index: i }, width: "140"
+                        -else 
+                          .image-box.present_img1
+                            %i.fas.fa-edit
+                            写真を載せる
+                      = f.fields_for :makes do |make|
+                        .js-file_group{"data-index" => "#{make.index}"}
+                          = make.file_field :image, class: 'js-file hidden'  
+                  .text-box
+                    %textarea{type: "text", name: "recipe[makes_attributes][0][how_make]", id: "recipe_makes_attributes_0_how_make", placeholder: "60字以内"}
+                .makes-content
+                  %h3 2
+                  %label(for="recipe_makes_attributes_1_image")
+                    #image-box2
+                      #previews2
+                        - if @recipe.persisted?
+                          - @recipe.makes.each_with_index do |image, i|
+                            = image_tag image.image.url, data: { index: i }, width: "140"
+                        -else 
+                          .image-box.present_img2
+                            %i.fas.fa-edit
+                            写真を載せる
+                      = f.fields_for :makes do |make|
+                        .js-file_group{"data-index" => "#{make.index}"}
+                          = make.file_field :image, class: 'js-file hidden'  
+                  .text-box
+                    %textarea{type: "text", name: "recipe[makes_attributes][1][how_make]", id: "recipe_makes_attributes_1_how_make", placeholder: "60字以内"}
+                .makes-content
+                  %h3 3
+                  %label(for="recipe_makes_attributes_2_image")
+                    #image-box3
+                      #previews3
+                        - if @recipe.persisted?
+                          - @recipe.makes.each_with_index do |image, i|
+                            = image_tag image.image.url, data: { index: i }, width: "140"
+                        -else 
+                          .image-box.present_img3
+                            %i.fas.fa-edit
+                            写真を載せる
+                      = f.fields_for :makes do |make|
+                        .js-file_group{"data-index" => "#{make.index}"}
+                          = make.file_field :image, class: 'js-file hidden'  
+                  .text-box
+                    %textarea{type: "text", name: "recipe[makes_attributes][2][how_make]", id: "recipe_makes_attributes_2_how_make", placeholder: "60字以内"}
+                .makes-content
+                  %h3 4
+                  %label(for="recipe_makes_attributes_3_image")
+                    #image-box4
+                      #previews4
+                        - if @recipe.persisted?
+                          - @recipe.makes.each_with_index do |image, i|
+                            = image_tag image.image.url, data: { index: i }, width: "140"
+                        -else 
+                          .image-box.present_img4
+                            %i.fas.fa-edit
+                            写真を載せる
+                      = f.fields_for :makes do |make|
+                        .js-file_group{"data-index" => "#{make.index}"}
+                          = make.file_field :image, class: 'js-file hidden'  
+                  .text-box
+                    %textarea{type: "text", name: "recipe[makes_attributes][3][how_make]", id: "recipe_makes_attributes_3_how_make", placeholder: "60字以内"}
+                .makes-content
+                  %h3 5
+                  %label(for="recipe_makes_attributes_4_image")
+                    #image-box5
+                      #previews5
+                        - if @recipe.persisted?
+                          - @recipe.makes.each_with_index do |image, i|
+                            = image_tag image.image.url, data: { index: i }, width: "140"
+                        -else 
+                          .image-box.present_img5
+                            %i.fas.fa-edit
+                            写真を載せる
+                      = f.fields_for :makes do |make|
+                        .js-file_group{"data-index" => "#{make.index}"}
+                          = make.file_field :image, class: 'js-file hidden'  
+                  .text-box
+                    %textarea{type: "text", name: "recipe[makes_attributes][4][how_make]", id: "recipe_makes_attributes_4_how_make", placeholder: "60字以内"}
+                .makes-content
+                  %h3 6
+                  %label(for="recipe_makes_attributes_5_image")
+                    #image-box6
+                      #previews6
+                        - if @recipe.persisted?
+                          - @recipe.makes.each_with_index do |image, i|
+                            = image_tag image.image.url, data: { index: i }, width: "140"
+                        -else 
+                          .image-box.present_img6
+                            %i.fas.fa-edit
+                            写真を載せる
+                      = f.fields_for :makes do |make|
+                        .js-file_group{"data-index" => "#{make.index}"}
+                          = make.file_field :image, class: 'js-file hidden'  
+                  .text-box
+                    %textarea{type: "text", name: "recipe[makes_attributes][5][how_make]", id: "recipe_makes_attributes_5_how_make", placeholder: "60字以内"}
+          .textarea__field
+            .field--left
+              %p コツ・ポイント
+              #hidden-point-text
+                = f.text_area :point, placeholder: "120字以内"
+                #remove-btn-left.btn
+                  取消
+              #btn-field-left
+                %i.fas.fa-edit
+                クリックしてコツやポイントを入力
+            .field--right
+              %p このレシピの生い立ち
+              #hidden-background-text
+                = f.text_area :background, placeholder: "120字以内"
+                #remove-btn-right.btn
+                  取消
+              #btn-field-right
+                %i.fas.fa-edit
+                クリックしてこのレシピが生まれた経緯などをを入力
+                %p 例)母秘伝のレシピを、家族好みの甘口に仕上げました。
+          .submit-field
+            = f.submit "レシピを公開する", class: "btn"
+      .side__bar
+        .side__bar__contentainer
+          .side__bar__container__content
+  = render 'layouts/side_bar'
