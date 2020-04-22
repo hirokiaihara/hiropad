@@ -1,30 +1,48 @@
 .wrapper
   .container
-    - if @user.user_image.present?
-      = image_tag @user.user_image.url
-    - else
-      = image_tag "member_photo_noimage_thumb.png",size: "130x130"
-    = @user.name
-    のキッチン
-    - if user_signed_in? && current_user.id == @user.id
-      = link_to "プロフィールを編集", edit_user_path(@user)
-    %h2 投稿したレシピ
-    - if @recipes.present?
-      = link_to "レシピ一覧", "/users/#{@user.id}/show_recipes"
-      - @recipes.each do |recipe|
-        = image_tag recipe.top_image.url
-        = recipe.title
-        - if current_user.id == recipe.user_id
-          = link_to "削除", recipe_path(recipe), method: :delete, data: {confirm: "削除しますか？"}
-    - else
-      %p 投稿がまだありません
-    %h2 つくれぽ
-    - if @reports.present?
-      = link_to "つくれぽ一覧", "/users/#{@user.id}/show_reports"
-      - @reports.each do |report|
-        
-        = link_to image_tag report.report_image.url
-        = report.comment
-    - else
-      %p 投稿がまだありません
+    = render "/users/header"
+    .users__mypage
+      %ul.users__mypage__tabs
+        = link_to "/users/#{@user.id}" do
+          %li.users__mypage__tabs__tab.active
+            トップ
+        = link_to "/users/#{@user.id}/show_recipes" do
+          %li.users__mypage__tabs__tab
+            レシピ
+        = link_to "/users/#{@user.id}/show_reports" do
+          %li.users__mypage__tabs__tab
+            つくれぽ
+      .users__mypage__container
+        .users__mypage__container__title
+          = link_to "レシピ一覧 ▶︎", "/users/#{@user.id}/show_recipes"
+        - if @recipes.present?
+          .users__mypage__container__recipes__box
+            - @recipes.each do |recipe|
+              .users__mypage__container__recipes__box__recipe
+                = link_to recipe_path(recipe) do
+                  .users__mypage__container__recipes__box__recipe__image
+                    = image_tag recipe.top_image.url
+                .users__mypage__container__recipes__box__recipe__title
+                  = recipe.title
+        - else
+          %p.message 投稿はまだありません
+      .users__mypage__row__container
+        .users__mypage__row__container__title
+          = link_to "つくれぽ一覧 ▶︎", "/users/#{@user.id}/show_reports"
+        - if @reports.present?
+          .users__mypage__row__container__reports__box
+            - @reports.each do |report|
+              .users__mypage__row__container__reports__box__report
+                .users__mypage__row__container__reports__box__report__image
+                  = image_tag report.report_image.url
+                .users__mypage__row__container__reports__box__report__title
+                  = link_to "/recipes/#{report.recipe_id}" do
+                    = report.recipe.title
+                %span by
+                %span
+                  = report.recipe.user.name
+                .users__mypage__row__container__reports__box__report__comment
+                  = report.comment
+        - else
+          %p.message つくれぽはまだありません
   = render 'layouts/side_bar'

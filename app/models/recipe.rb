@@ -1,5 +1,5 @@
 class Recipe < ApplicationRecord
-  validates :title, :how_many, :top_image, presence: true
+  validates :title, :top_image, presence: true
   validates :title, length: {maximum: 20}
   validates :introduction, length: {maximum: 60}
   validates :point, :background, length: {maximum: 120} 

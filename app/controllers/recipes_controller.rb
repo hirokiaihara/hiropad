@@ -16,10 +16,10 @@ class RecipesController < ApplicationController
   def create
     @recipe = Recipe.create(recipe_params)
     if @recipe.save
-      flash[:notice] = "レシピを公開しました"
+      flash[:notice] = "レシピを公開しました。"
       redirect_to root_path
     else
-      flash[:alert] = "投稿できませんでした。必須項目を確認してください"
+      flash[:alert] = "投稿できませんでした。タイトルと料理写真は必須です。"
       render :new
     end
   end
@@ -30,7 +30,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
 
     @report = Report.new
-    @reports = @recipe.reports.includes(:user)
+    @reports = @recipe.reports.includes(:user).order('reports.created_at desc').page(params[:page]).per(6)
   end
 
   def destroy
@@ -41,7 +41,7 @@ class RecipesController < ApplicationController
 
   def search
     @title = params[:keyword]
-    @recipes = Recipe.includes(:foods).search(params[:keyword]).order('recipes.created_at desc').limit(10)
+    @recipes = Recipe.includes(:foods).search(params[:keyword]).order('recipes.created_at desc').page(params[:page]).per(10)
   end
 
   private

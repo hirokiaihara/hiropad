@@ -1,0 +1,18 @@
+.users__header
+  .users__header__container
+    .users__header__container__image
+    .users__header__container__profile
+      .users__header__container__profile--left
+        - if @user.user_image.present?
+          = image_tag @user.user_image.url
+        - else
+          = image_tag "member_photo_noimage_thumb.png"
+      .users__header__container__profile--right
+        .users__header__container__profile--right__name
+          = @user.name
+          %span のキッチン
+        .users__header__container__profile--right__comment
+          = @user.users_comment
+        - if user_signed_in? && current_user.id == @user.id
+          .users__header__container__profile--right__edit
+            = link_to "プロフィールを編集", edit_user_path(@user)
