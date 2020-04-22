@@ -1,5 +1,8 @@
 .wrapper
   .container
+    .header__image
+      %h1 おうちで作ろう
+      %p 毎日の料理を楽しみにするレシピ検索アプリ
     .index__recipe__page
       .index__recipe__page__ranks__field
         .title__field
@@ -7,7 +10,7 @@
           人気レシピ
         .sub__title 
           %i.far.fa-flag
-          つくれぽの数が多いレシピ ▶︎
+          つくれぽ数ランキング ▶︎
         .index__recipe__page__ranks__field--flex
           - if @ranks[0].present? && @ranks[1].present? && @ranks[2].present? && @ranks[3].present? && @ranks[4].present?
             .index__recipe__page__ranks__field__first__box
@@ -18,8 +21,9 @@
                   = image_tag @ranks[0].top_image.url
                 .title-box
                   = @ranks[0].title
-                %span by
-                = @ranks[0].user.name
+                = link_to user_path(@ranks[0].user) do
+                  %span by
+                  = @ranks[0].user.name
             .index__recipe__page__ranks__field__after__box
               = link_to recipe_path(@ranks[1].id) do
                 .image-box
@@ -28,8 +32,9 @@
                   = image_tag @ranks[1].top_image.url
                 .title-box
                   = @ranks[1].title
-                %span by
-                = @ranks[1].user.name
+                = link_to user_path(@ranks[1].user) do
+                  %span by
+                  = @ranks[1].user.name
             .index__recipe__page__ranks__field__after__box
               = link_to recipe_path(@ranks[2].id) do
                 .image-box
@@ -38,8 +43,9 @@
                   = image_tag @ranks[2].top_image.url
                 .title-box
                   = @ranks[2].title
-                %span by
-                = @ranks[2].user.name
+                = link_to user_path(@ranks[2].user) do
+                  %span by
+                  = @ranks[2].user.name
             .index__recipe__page__ranks__field__after__box
               = link_to recipe_path(@ranks[3].id) do
                 .image-box
@@ -48,8 +54,9 @@
                   = image_tag @ranks[3].top_image.url
                 .title-box
                   = @ranks[3].title
-                %span by
-                = @ranks[3].user.name
+                = link_to user_path(@ranks[3].user) do
+                  %span by
+                  = @ranks[3].user.name
             .index__recipe__page__ranks__field__after__box
               = link_to recipe_path(@ranks[4].id) do
                 .image-box
@@ -58,8 +65,9 @@
                   = image_tag @ranks[4].top_image.url
                 .title-box
                   = @ranks[4].title
-                %span by
-                = @ranks[4].user.name
+                = link_to user_path(@ranks[4].user) do
+                  %span by
+                  = @ranks[4].user.name
           - else
             %p ランキングはまだありません
             

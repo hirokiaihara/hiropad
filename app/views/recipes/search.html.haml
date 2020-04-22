@@ -33,4 +33,5 @@
           - else
             %p 一致するレシピはありませんでした。
             %p ひらがなやカタカナ、漢字で検索したみてください。
+        = paginate(@recipes)
   = render 'layouts/side_bar'

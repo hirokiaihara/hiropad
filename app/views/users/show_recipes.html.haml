@@ -10,5 +10,6 @@
           = link_to "削除", recipe_path(recipe), method: :delete, data: {confirm: "削除しますか？"}
     - else
       %p 投稿がまだありません
+    = paginate(@recipes)
   = render 'layouts/side_bar'
      

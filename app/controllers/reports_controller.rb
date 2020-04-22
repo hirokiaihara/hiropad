@@ -3,16 +3,19 @@ class ReportsController < ApplicationController
   def create
     @report = Report.new(report_params)
     if @report.save
-      redirect_to recipe_path(@report.recipe.id), notice: "つくれぽが投稿されました"
+      redirect_to recipe_path(@report.recipe.id), notice: "つくれぽが投稿されました。"
     else
-      redirect_to recipe_path(@report.recipe.id), alert: "投稿できません。写真とコメントは必須です"
+      redirect_to recipe_path(@report.recipe.id), alert: "投稿できません。写真とコメントは必須です。"
     end
   end
 
   def destroy
     report = Report.find(params[:id])
-    report.destroy
-    redirect_to "/users/#{current_user.id}/show_reports"
+    if report.destroy
+      redirect_to "/users/#{current_user.id}/show_reports", notice: "つくれぽを削除しました。"
+    else
+      redirect_to "/users/#{current_user.id}/show_reports", alert: "削除できません。"
+    end
   end
 
   private

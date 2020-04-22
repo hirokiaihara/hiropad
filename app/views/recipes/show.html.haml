@@ -69,6 +69,7 @@
                   = simple_format report.comment
                   %span by
                   = link_to report.user.name, "/users/#{report.user_id}"
+          = paginate(@reports)
         -else 
           %p.message つくれぽの投稿はまだありません
       .make__report__container

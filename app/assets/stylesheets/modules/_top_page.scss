@@ -34,7 +34,15 @@ textarea {
   border-radius: 3px;
   border: 1px solid $border_color;
 }
-
+.pagination {
+  width: 200px;
+  margin: 0 auto;
+  font-weight: bold;
+  color: $sub_font_color;
+  a {
+    border-bottom: 1px solid;
+  }
+}
 
 .field--flex {
   display: flex;
@@ -116,6 +124,21 @@ header {
     .btn:hover {
       opacity: 0.8;
     }
+  }
+}
+.header__image {
+  background-image: image-url('fruits.jpg');
+  background-size: cover;
+  height: 230px;
+  border-radius: 3px;
+  border: solid 1px $border_color;
+  padding: 10px;
+  h1 {
+    font-size: 40px;
+    font-weight: bold;
+  }
+  p {
+    font-size: 25px;
   }
 }
 //トップページ

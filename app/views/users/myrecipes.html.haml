@@ -10,4 +10,5 @@
           = link_to "マイレシピから削除", "/myrecipes/#{myrecipe.recipe_id}/myrecipe_destroy", {method: "post"}
       - else
         保存したレシピはありません
+  //= paginate(@myrecipes)
   = render 'layouts/side_bar'

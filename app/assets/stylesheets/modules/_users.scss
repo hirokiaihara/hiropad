@@ -1,0 +1,150 @@
+//マイページヘッダー
+.users__header {
+  &__container {
+    background-color: #ffffff;
+    border-radius: 3px;
+    border: 1px solid $border_color;
+    &__image {
+      background-image: image-url('table.jpg');
+      background-size: cover;
+      height: 150px;
+      opacity: 0.7;
+      
+    }
+    &__profile {
+      height: 95px;
+      &--left {
+        float: left;
+        height: 70px;
+        width: 130px;
+        position: relative;
+        img {
+          height: 110px;
+          width: 110px;
+          object-fit: cover;
+          border-radius: 50%;
+          border: solid 5px #fff;
+          position: absolute;
+          top: -40px;
+          left: 10px;
+        }
+      }
+      &--right {
+        &__name {
+          padding-top: 3px;
+          font-size: 25px;
+          color: $font_color;
+          span {
+            font-size: 20px;
+          }
+        }
+        &__comment {
+          color: $sub_font_color;
+          font-size: 17px;
+        }
+        &__edit {
+          a {
+            border-bottom: 1px solid;
+          }
+          
+        }  
+      }
+    }
+  }
+}
+//マイページ・トップ
+.users__mypage {
+  background-color: #ffffff;
+  border: solid 1px $border_color;
+  border-radius: 3px;
+  color: $font_color;
+  &__tabs {
+    display: flex;
+    border-bottom: 1px solid $border_color;
+    &__tab {
+      padding: 5px 20px;
+    }
+    .active {
+      border-bottom: 5px solid $orenge;
+      font-weight: bold;
+    }
+  }
+  &__container {
+    padding-bottom: 10px;
+    border-bottom: solid 1px $border_color;
+    &__title {
+      padding: 5px 20px;
+      border-bottom: 1px solid $border_color;
+      a {
+        border-bottom: solid 1px;
+      }
+    }
+    &__recipes__box {
+      display: flex;
+      &__recipe {
+        width: 20%;
+        margin: 5px;
+        &__image {
+          img {
+            height: 150px;
+            width: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+          }
+          img:hover {
+            opacity: 0.7;
+          }
+        }
+        &__title {
+          color: $green;
+        }
+      }
+    }
+  }
+  &__row__container {
+    &__title {
+      padding: 5px 20px;
+      border-bottom: 1px solid $border_color;
+      a {
+        border-bottom: solid 1px;
+      }
+    }
+    &__reports__box {
+      display: flex;
+      flex-wrap: wrap;
+      &__report {
+        margin-top: 5px;
+        margin-left: 7px;
+        border: solid 1px $border_color;
+        border-radius: 3px;
+        padding: 5px;
+        &__image {
+          img {
+            width: 140px;
+          }
+        }
+        &__title {
+          a {
+            color: $green;
+            border-bottom: solid 1px;
+            font-size: 15px;
+          }
+          a:hover {
+            opacity: 0.7;
+          }
+        }
+        span {
+          font-size: 13px;
+          color: $sub_font_color;
+        }
+        &__comment {
+          
+          font-size: 15px;
+        }
+      }
+    }
+  }
+  .message {
+    padding-left: 20px;
+  }
+}

@@ -10,6 +10,7 @@
 |day|integer|null: false|
 |encrypted_password|string|null: false|
 |user_image|string||
+|users_comment|text||
 
 ### Association
 - has_many :recipes
@@ -36,7 +37,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|image|string|null: false|
+|image|string||
 |how|text|null: false|
 |recipe_id|integer|null: false, foreign_key: true|
 
