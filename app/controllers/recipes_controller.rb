@@ -40,7 +40,8 @@ class RecipesController < ApplicationController
   end
 
   def search
-    @recipes = Recipe.search(params[:keyword])
+    @title = params[:keyword]
+    @recipes = Recipe.includes(:foods).search(params[:keyword]).order('recipes.created_at desc').limit(10)
   end
 
   private

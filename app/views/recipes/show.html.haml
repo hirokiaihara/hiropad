@@ -1,97 +1,99 @@
-.main.show__recipe__page
+.wrapper
   .container
-    .upper-flex-container
-      .show__recipe__page__title__field
-        = @recipe.title
-      .show__recipe__page__myrecipe__field
-        - if user_signed_in?
-          - if Myrecipe.find_by(user_id: current_user.id, recipe_id: @recipe.id)
-            = link_to "/myrecipes/#{@recipe.id}/destroy", {method: "post"} do
-              %i.fas.fa-folder マイレシピから削除
-          - else
-            = link_to "/myrecipes/#{@recipe.id}/create", {method: "post"} do
-              %i.fas.fa-folder マイレシピに保存
-    .center-flex-container
-      .show__recipe__page__top_image__field
-        = image_tag @recipe.top_image.url
-      .right-container
-        .show__recipe__page__introduction__field
-          = simple_format @recipe.introduction
-          %span by
-          = link_to @recipe.user.name, "/users/#{@recipe.user_id}"
-        .show__recipe__page__foods__field
-          %h3 材料
-          .upper-field
-            (
-            = @recipe.how_many
-            )
-          - @recipe.foods.each do |food|
-            .row-field
-              .row-field-food_name
-                = food.food_name
-              .row-field-amount
-                = food.amount
-    .show__recipe__page__makes__field
-      - @recipe.makes.each_with_index do |make, i|
-        .show__recipe__page__makes__field__content
-          %span
-            = i+1
-          .image-box
-            - if make.image.present?
-              = image_tag make.image.url
-          .text-box
-            - if make.how_make.present?
-              = simple_format make.how_make
-    .show__recipe__page__row__flex__field
-      .left-field
-        %h3 コツ・ポイント
-        = simple_format @recipe.point
-      .right-field
-        %h3 このレシピの生い立ち
-        = simple_format @recipe.background
-    %span.date 公開日
-    = @recipe.created_at.strftime('%Y/%m/%d')
-    - if user_signed_in? && current_user.id == @recipe.user_id
-      = link_to "このレシピを削除", recipe_path(@recipe), method: :delete, data: {confirm: "削除しますか？"}, class: "delete-btn"
-    .clear
-    .show__reports__container
-      %h2 みんなのつくりましたフォトレポート「つくれぽ」
-      - if @reports.present?
-        .show__reports__container--flex
-          - @reports.each do |report|
-            .report__box
-              .date-box
-                = report.created_at.strftime('%Y/%m/%d')
-              .report__box__image__box
-                = image_tag report.report_image.url
-              .report__box__text__box
-                = simple_format report.comment
-                %span by
-                = link_to report.user.name, "/users/#{report.user_id}"
-      -else 
-        %p つくれぽの投稿はまだありません
-    .make__report__container
-      - if current_user.id != @recipe.user_id
-        #open-report-modal.open-btn
-          %i.fas.fa-edit
-            つくれぽを書く
-        #report-mask.hidden
-          %section#report-modal
-            %h2 つくれぽを投稿しよう！
-            .new__report__form__body
-              =form_for [@recipe, @report] do |f|
-                .image-field
-                  %label(for="report_report_image")
-                    .field
-                      %img#top_img_prev-r
-                    - if @report.report_image.present?
-                      = image_tag @report.report_image.url, class: "top_present_img-r"
-                    -else 
-                      .report-image-box.top_present_img-r
-                        %i.fas.fa-camera
-                          クリックして写真をのせる
-                    = f.file_field :report_image, class: "hidden"
-                  
-                = f.text_area :comment, placeholder: "32文字以内"
-                = f.submit "つくれぽを投稿する", class: "submit-btn"
-            #close-report-modal.btn 閉じる
+    .show__recipe__page
+      .upper-flex-container
+        .show__recipe__page__title__field
+          = @recipe.title
+        .show__recipe__page__myrecipe__field
+          - if user_signed_in?
+            - if Myrecipe.find_by(user_id: current_user.id, recipe_id: @recipe.id)
+              = link_to "/myrecipes/#{@recipe.id}/destroy", {method: "post"} do
+                %i.fas.fa-folder マイレシピから削除
+            - else
+              = link_to "/myrecipes/#{@recipe.id}/create", {method: "post"} do
+                %i.fas.fa-folder マイレシピに保存
+      .center-flex-container
+        .show__recipe__page__top_image__field
+          = image_tag @recipe.top_image.url
+        .right-container
+          .show__recipe__page__introduction__field
+            = simple_format @recipe.introduction
+            %span by
+            = link_to @recipe.user.name, "/users/#{@recipe.user_id}"
+          .show__recipe__page__foods__field
+            %h3 材料
+            .upper-field
+              (
+              = @recipe.how_many
+              )
+            - @recipe.foods.each do |food|
+              .row-field
+                .row-field-food_name
+                  = food.food_name
+                .row-field-amount
+                  = food.amount
+      .show__recipe__page__makes__field
+        - @recipe.makes.each_with_index do |make, i|
+          .show__recipe__page__makes__field__content
+            %span
+              = i+1
+            .image-box
+              - if make.image.present?
+                = image_tag make.image.url
+            .text-box
+              - if make.how_make.present?
+                = simple_format make.how_make
+      .show__recipe__page__row__flex__field
+        .left-field
+          %h3 コツ・ポイント
+          = simple_format @recipe.point
+        .right-field
+          %h3 このレシピの生い立ち
+          = simple_format @recipe.background
+      %span.date 公開日
+      = @recipe.created_at.strftime('%Y/%m/%d')
+      - if user_signed_in? && current_user.id == @recipe.user_id
+        = link_to "このレシピを削除", recipe_path(@recipe), method: :delete, data: {confirm: "削除しますか？"}, class: "delete-btn"
+      .clear
+      .show__reports__container
+        %h2 みんなのつくりましたフォトレポート「つくれぽ」
+        - if @reports.present?
+          .show__reports__container--flex
+            - @reports.each do |report|
+              .report__box
+                .date-box
+                  = report.created_at.strftime('%Y/%m/%d')
+                .report__box__image__box
+                  = image_tag report.report_image.url
+                .report__box__text__box
+                  = simple_format report.comment
+                  %span by
+                  = link_to report.user.name, "/users/#{report.user_id}"
+        -else 
+          %p.message つくれぽの投稿はまだありません
+      .make__report__container
+        - if current_user.id != @recipe.user_id
+          #open-report-modal.open-btn
+            %i.fas.fa-edit
+              つくれぽを書く
+          #report-mask.hidden
+            %section#report-modal
+              %h2 つくれぽを投稿しよう！
+              .new__report__form__body
+                =form_for [@recipe, @report] do |f|
+                  .image-field
+                    %label(for="report_report_image")
+                      .field
+                        %img#top_img_prev-r
+                      - if @report.report_image.present?
+                        = image_tag @report.report_image.url, class: "top_present_img-r"
+                      -else 
+                        .report-image-box.top_present_img-r
+                          %i.fas.fa-camera
+                            クリックして写真をのせる
+                      = f.file_field :report_image, class: "hidden"
+                    
+                  = f.text_area :comment, placeholder: "32文字以内"
+                  = f.submit "つくれぽを投稿する", class: "submit-btn"
+              #close-report-modal.btn 閉じる
+  = render 'layouts/side_bar'

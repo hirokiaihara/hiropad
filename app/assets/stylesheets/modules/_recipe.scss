@@ -1,3 +1,4 @@
+//レシピ投稿ページ
 .hidden {
   display: none;
 }
@@ -16,6 +17,11 @@ img#top_img_prev, img.top_present_img {
 }
 #hidden-background-text, #hidden-point-text {
   display: none;
+}
+.new__recipe__form {
+  border: solid 1px $border_color;
+  border-radius: 3px;
+  background-color: #ffffff;
 }
 .top-image-box {
   width: 280px;

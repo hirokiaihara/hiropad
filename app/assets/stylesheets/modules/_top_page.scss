@@ -4,22 +4,28 @@
 body {
   background-color: $main_color;
 }
-.main {
-  background-color: $main_color;
-  width: 100%;
-}
 .container {
   width: 1000px;
-  margin: 0 auto;
-  background-color: #ffffff;
+  margin-left: 100px;
+}
+.wrapper {
+  display: flex;
 }
 //共通パーツ
 a {
   text-decoration: none;
-  color: #401c00;
+  color: $font_color;
 }
-a:hover { color: #ff8000; }
-
+a:hover {
+   color: #ff8000;
+}
+.btn {
+  cursor: pointer;
+  border-radius: 3px;
+}
+.btn:hover {
+   color: #ff8000;
+}
 input {
   border-radius: 3px;
   border: 1px solid $border_color;
@@ -28,11 +34,7 @@ textarea {
   border-radius: 3px;
   border: 1px solid $border_color;
 }
-.btn {
-  cursor: pointer;
-  border-radius: 3px;
-}
-.btn:hover { color: #ff8000; }
+
 
 .field--flex {
   display: flex;
@@ -55,9 +57,6 @@ header {
   background-color: $main-color;
   height: 70px;
   display: flex;
-  width: 1000px;
-  margin: 0 auto;
-
   .link-logo {
     width: 290px;
     color: black;
@@ -85,10 +84,15 @@ header {
       margin-top: 5px;
       padding: 3px;
     }
-    .btn {
+    .search-btn {
       height: 32px;
       padding: 0 7px;
     }
+    .search-btn:hover {
+      opacity: 0.7;
+      cursor: pointer;
+    }
+    
     #open-category-modal {
       color: $font_color;
       width: 180px;
@@ -98,6 +102,7 @@ header {
       color: #ff8000; 
     }
   }
+  //サービスヘッダー
   .service__field {
     line-height: 70px;
     margin-left: 70px;
@@ -113,7 +118,9 @@ header {
     }
   }
 }
+//トップページ
 .index__recipe__page {
+  background-color: #ffffff;
   border: solid 1px $border_color;
   border-top: solid 5px $green;
   border-radius: 5px;
@@ -204,6 +211,7 @@ header {
       }
     }
   }
+  //カテゴリー一覧
   &__category__field {
     border-top: solid 1px $border_color;
     #main_color {
@@ -234,6 +242,7 @@ header {
       }
     }
   }
+  //新着投稿
   &__new__field {
     border-top: solid 5px $green;
     border-radius: 5px;
@@ -255,15 +264,24 @@ header {
         .title-box {
           color: $green;
         }
+        span {
+          font-size: 10px;
+          color: $font_color;
+        }
+        a {
+          color: $orenge;
+        }
+        a:hover {
+          opacity: 0.7;
+        }
       }
     }
   }
 }
 //フッター
 footer {
+  background-color: $main_color;
   padding-top: 5px;
-  width: 1000px;
-  margin: 0 auto;
   a {
     float: right;
   }

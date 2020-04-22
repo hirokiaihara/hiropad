@@ -1,10 +1,36 @@
-.main
-  .container 
-    -if @recipes.present?
-      - @recipes.each do |recipe|
-        = recipe.title
-        = image_tag recipe.top_image.url
-    - else
-      %p 一致するレシピはありませんでした。
-      %p ひらがなやカタカナ、漢字で検索したみてください。
-      
+.wrapper
+  .container
+    .search__result__page
+      .search__result__page__body
+        .search__result__page__body__title__field
+          %h1
+            = @title
+          %span のレシピ
+          %span
+            = @recipes.count
+            件
+        .search__result__page__body__recipes__container
+          -if @recipes.present?
+            - @recipes.each do |recipe|
+              .search__result__page__body__recipes__container__content
+                .search__result__page__body__recipes__container__content--left__box
+                  = link_to recipe_path(recipe) do
+                    = image_tag recipe.top_image.url
+                .search__result__page__body__recipes__container__content--right__box
+                  .search__result__page__body__recipes__container__content--right__box--upper
+                    = link_to recipe_path(recipe), class: "title-link" do
+                      = recipe.title
+                    %span by
+                    = link_to user_path(recipe.user), class: "user-link" do
+                      = recipe.user.name
+                  .search__result__page__body__recipes__container__content--right__box--center
+                    = simple_format recipe.introduction
+                  .search__result__page__body__recipes__container__content--right__box--row
+                    材料：
+                    - recipe.foods.each do |food|
+                      = food.food_name
+                .clear
+          - else
+            %p 一致するレシピはありませんでした。
+            %p ひらがなやカタカナ、漢字で検索したみてください。
+  = render 'layouts/side_bar'

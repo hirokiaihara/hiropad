@@ -1,4 +1,4 @@
-.main
+.wrapper
   .container
     - if @user.user_image.present?
       = image_tag @user.user_image.url
@@ -27,3 +27,4 @@
         = report.comment
     - else
       %p 投稿がまだありません
+  = render 'layouts/side_bar'
