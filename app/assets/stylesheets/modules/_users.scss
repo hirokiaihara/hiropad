@@ -12,7 +12,7 @@
       
     }
     &__profile {
-      height: 95px;
+      padding-bottom: 5px;
       &--left {
         float: left;
         height: 70px;
@@ -102,6 +102,7 @@
     }
   }
   &__row__container {
+    padding-bottom: 20px;
     &__title {
       padding: 5px 20px;
       border-bottom: 1px solid $border_color;

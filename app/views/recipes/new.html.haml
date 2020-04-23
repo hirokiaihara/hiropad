@@ -4,7 +4,7 @@
       .new__recipe__form__body
         = form_for @recipe do |f|
           .title__field
-            = f.text_field :title, placeholder: "タイトルを入力"
+            = f.text_field :title, placeholder: "タイトルを入力(20字以内)"
           .new__recipe__form__body--flex
             .top-image-field
               %label(for="recipe_top_image")

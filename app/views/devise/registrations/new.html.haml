@@ -5,6 +5,7 @@
         = devise_error_messages!
         .field
           %p ニックネーム
+          %p ※10字以内。
           .field-input
             = f.text_field :name, autofocus: true
         .field
@@ -12,7 +13,7 @@
           .field-input
             = f.email_field :email
         .field
-          %p生年月日
+          %p 生年月日
           .field-select
             = f.select :year, ["--"], {}, {class: "select_birth_box", id: "select_birth_year"}
             %span年
@@ -22,6 +23,7 @@
             %span日
         .field
           %p パスワードを設定してください
+          %p ※半角8字以上。
           .field-input
             = f.password_field :password, autocomplete: "off", placeholder: "パスワード(英数字8文字以上)"
           .field-input
