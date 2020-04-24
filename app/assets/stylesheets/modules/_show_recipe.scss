@@ -82,6 +82,11 @@
       border-bottom: 1px solid;
     }
   }
+  h3 {
+    font-size: 25px;
+    font-weight: bold;
+    
+  }
   &__makes__field {
     display: flex;
     flex-wrap: wrap;
@@ -124,9 +129,9 @@
   .date {
     margin-left: 20px;
   }
-  .delete-btn {
+  .delete-btn, .edit-btn {
     display: inline-block;
-    margin: 15px 20px;
+    margin: 15px 15px;
     height: 32px;
     background-color: $orenge;
     padding: 5px;
@@ -182,13 +187,13 @@
     padding-bottom: 20px;
   }
   .open-btn {
-    width: 140px;
+    width: 170px;
     border: solid 1px $border_color;
     border-radius: 3px;
     background-color: #ececec;
     padding: 3px 10px;
     margin-left: 20px;
-    font-size: 13px;
+    font-size: 17px;
     margin: 0px auto;
   }
   .open-btn:hover {
