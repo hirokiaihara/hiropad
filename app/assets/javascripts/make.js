@@ -6,6 +6,9 @@ $(document).on('turbolinks:load', ()=> {
     const html = `<img data-index="${index}" src="${url}" width="140px">`;
     return html;
   }
+  let fileIndex = [1,2,3,4,5,6,7,8,9,10];
+  lastIndex = $('.js-file_group:last').data('index');
+  fileIndex.splice(0, lastIndex);
 
   $('#image-box1').on('change', '.js-file', function(e) {
     const targetIndex = $(this).parent().data('index');
@@ -25,6 +28,26 @@ $(document).on('turbolinks:load', ()=> {
     $('#remove-btn').show();
     readURL(this);
   })
+  //編集時の削除
+  $('#image-box1').on('click', '.edit-remove', function() {
+    const targetIndex = $(this).parent().data('index')
+    // 該当indexを振られているチェックボックスを取得する
+    const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
+    // もしチェックボックスが存在すればチェックを入れる
+    if (hiddenCheck) {
+      $(hiddenCheck).prop('checked', true);
+    }
+  });
+  //編集時の削除の取消
+  $('#image-box1').on('click', '.edit-leave', function() {
+    const targetIndex = $(this).parent().data('index')
+    // 該当indexを振られているチェックボックスを取得する
+    const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
+    // もしチェックボックスが存在すればチェックを入れる
+    if (hiddenCheck) {
+      $(hiddenCheck).prop('checked', false);
+    }
+  });
   //削除ボタン
   $('#remove-btn').on('click', function(){
     $('#previews1').remove();
