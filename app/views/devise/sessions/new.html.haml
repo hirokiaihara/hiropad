@@ -1,15 +1,19 @@
-.user__form
+.wrapper
   .container
-    .users__form__body
-      %h2 ログイン
+    .session__container__form
+      .session__container__form__title
+        %h2 ログイン
+        = link_to "新規登録はこちら", new_user_registration_path, class: 'btn'
       = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-        .field
-          %p 登録しているメールアドレス
-          .field-input
-            = f.email_field :email, autofocus: true
-        .field
-          %p パスワード
-          .field-input
-            = f.password_field :password, autocomplete: "off", placeholder: "パスワード(英数字8文字以上)"
-        .field
-          = f.submit "ログイン", class: 'btn'
+        .session__container__form__email__field
+          %h3 登録しているメールアドレス
+          = f.email_field :email, autofocus: true
+        .session__container__form__password__field
+          %h3 パスワード
+          = f.password_field :password, autocomplete: "off", placeholder: "パスワード(英数字8文字以上)"
+        .session__container__form__submit__field
+          = f.submit "ログイン", class: 'btn session'
+        .session__container__form__comment
+          %p 企業採用担当者様はこちらの情報でログイン願います。
+          %p email : 
+          %p password : 

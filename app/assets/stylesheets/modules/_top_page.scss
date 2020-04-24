@@ -133,6 +133,7 @@ header {
   border-radius: 3px;
   border: solid 1px $border_color;
   padding: 10px;
+  color: $font_color;
   h1 {
     font-size: 40px;
     font-weight: bold;
@@ -150,8 +151,9 @@ header {
   .title__field {
     border-bottom: 1px solid $border_color;
     font-size: 20px;
-    padding: 5px;
+    padding: 5px 10px;
     color: $green;
+    font-weight: bold;
   }
   .sub__title {
     background-color: $main_color;
@@ -305,6 +307,10 @@ header {
 footer {
   background-color: $main_color;
   padding-top: 5px;
+  p {
+    text-align: center;
+    padding-bottom: 10px;
+  }
   a {
     float: right;
   }

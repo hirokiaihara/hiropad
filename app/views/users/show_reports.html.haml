@@ -1,15 +1,41 @@
 .wrapper
   .container
-    = @user.name
-    さんのつくれぽ一覧
-    - if @reports.present?
-      - @reports.each do |report|
-        = image_tag report.report_image.url
-        = report.comment
-        - if current_user.id == report.user_id
-          = link_to "/recipes/#{report.recipe_id}/reports/#{report.id}", method: :delete, data: {confirm: "削除しますか？"} do
-            削除する
-    - else
-      %p 投稿がまだありません
-    = paginate(@reports)
+    = render "/users/header"
+    .users__mypage
+      %ul.users__mypage__tabs
+        = link_to "/users/#{@user.id}" do
+          %li.users__mypage__tabs__tab
+            トップ
+        = link_to "/users/#{@user.id}/show_recipes" do
+          %li.users__mypage__tabs__tab
+            レシピ
+        = link_to "/users/#{@user.id}/show_reports" do
+          %li.users__mypage__tabs__tab.active
+            つくれぽ
+      .users__mypage__row__container
+        .users__mypage__row__container__title
+          %h3 つくれぽ一覧（最新順）
+        - if @reports.present?
+          .users__mypage__row__container__reports__box
+            - @reports.each do |report|
+              .users__mypage__row__container__reports__box__report
+                .date-box
+                  = report.created_at.strftime('%Y/%m/%d')
+                .users__mypage__row__container__reports__box__report__image
+                  = image_tag report.report_image.url
+                .users__mypage__row__container__reports__box__report__title
+                  = link_to "/recipes/#{report.recipe_id}" do
+                    = report.recipe.title
+                %span by
+                %span
+                  = report.recipe.user.name
+                .users__mypage__row__container__reports__box__report__comment
+                  = report.comment
+                - if user_signed_in? && current_user.id == report.user_id
+                  = link_to "/recipes/#{report.recipe_id}/reports/#{report.id}", method: :delete, data: {confirm: "削除しますか？"}, class: "delete-btn" do
+                    削除する
+        - else
+          %p.message つくれぽはまだありません
+  
+      = paginate(@reports)
   = render 'layouts/side_bar'

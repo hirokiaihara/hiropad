@@ -149,3 +149,88 @@
     padding-left: 20px;
   }
 }
+//マイページ・レシピ一覧
+.users__mypage__container {
+  a:hover {
+    opacity: 0.8;
+  }
+  &__recipes__container {
+    &__content {
+      margin: 10px 20px;
+      display: flex;
+      &--left__box {
+        img {
+          height: 180px;
+          width: 120px;
+          object-fit: cover;
+        }
+      }
+      &--right__box {
+        margin-left: 20px;
+        &--upper {
+          a {
+            border-bottom: 1px solid;
+          }
+          a.title-link {
+            color: $green;
+            font-size: 25px;
+            font-weight: bold;
+          }
+          span {
+            color: $font_color;
+            font-size: 15px;
+          }
+          a.user-link {
+            color: $orenge;
+            font-size: 20px;
+          }
+        }
+        &--center {
+          color: $font_color;
+          width: 600px;
+        }
+        &--row {
+          color: $sub_font_color;
+            font-size: 15px;
+            padding-bottom: 5px;
+        }
+        &--last {
+          .delete-btn, .edit-btn {
+            display: inline-block;
+            margin-left: 5px;
+            height: 25px;
+            line-height: 25px;
+            background-color: $orenge;
+            padding: 0px 10px;
+            color: #ffffff;
+            font-weight: bold;
+            border-radius: 2px;;
+          }
+        }
+      }
+    }
+  }
+}
+//マイページ・レシピ一覧
+.users__mypage__row__container {
+  h3 {
+    color: $font_color;
+  }
+  .date-box {
+    font-size: 10px;
+    float: right;
+  }
+  .delete-btn {
+    font-size: 13px;
+    border-radius: 2px;
+    background-color: $orenge;
+    height: 20px;
+    line-height: 20px;
+    padding: 0px 3px;
+    color: #fff;
+    display: inline-block;
+  }
+  a:hover {
+    opacity: 0.8;
+  }
+}

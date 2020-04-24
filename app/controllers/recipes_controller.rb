@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
   # before_action :authenticate_user!
-  before_action :set_recipe, except: [:index, :new, :create]
+  before_action :set_recipe, except: [:index, :new, :create, :search]
   def index
     @recipes = Recipe.includes(:foods, :makes).order('created_at desc').limit(12)
     @ranks = Recipe.create_ranks

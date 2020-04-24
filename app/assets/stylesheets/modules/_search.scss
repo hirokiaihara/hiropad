@@ -3,6 +3,9 @@
   background-color: #ffffff;
   border: solid 1px $border_color;
   border-radius: 3px;
+  .message {
+    margin-left: 20px;
+  }
   &__body {
     &__title__field {
       margin-left: 20px;
@@ -40,6 +43,7 @@
             a.title-link {
               color: $green;
               font-size: 25px;
+              font-weight: bold;
             }
             span {
               color: $font_color;
