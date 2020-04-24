@@ -33,7 +33,7 @@ class RecipesController < ApplicationController
     
     if @recipe.update(recipe_params)
       redirect_to recipe_path(@recipe)
-    elseroy
+    else
       render :edit
     end
   end
