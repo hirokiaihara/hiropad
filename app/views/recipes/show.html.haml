@@ -32,6 +32,7 @@
                   = food.food_name
                 .row-field-amount
                   = food.amount
+      %h3 作り方
       .show__recipe__page__makes__field
         - @recipe.makes.each_with_index do |make, i|
           .show__recipe__page__makes__field__content
@@ -53,6 +54,7 @@
       %span.date 公開日
       = @recipe.created_at.strftime('%Y/%m/%d')
       - if user_signed_in? && current_user.id == @recipe.user_id
+        = link_to '編集する', edit_recipe_path(@recipe), class: "edit-btn"
         = link_to "このレシピを削除", recipe_path(@recipe), method: :delete, data: {confirm: "削除しますか？"}, class: "delete-btn"
       .clear
       .show__reports__container
