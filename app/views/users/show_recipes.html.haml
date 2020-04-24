@@ -1,15 +1,47 @@
 .wrapper
   .container
-    = @user.name
-    さんの投稿レシピ
-    - if @recipes.present?
-      - @recipes.each do |recipe|
-        = image_tag recipe.top_image.url
-        = recipe.title
-        - if current_user.id == recipe.user_id
-          = link_to "削除", recipe_path(recipe), method: :delete, data: {confirm: "削除しますか？"}
-    - else
-      %p 投稿がまだありません
-    = paginate(@recipes)
+    = render "/users/header"
+    .users__mypage
+      %ul.users__mypage__tabs
+        = link_to "/users/#{@user.id}" do
+          %li.users__mypage__tabs__tab
+            トップ
+        = link_to "/users/#{@user.id}/show_recipes" do
+          %li.users__mypage__tabs__tab.active
+            レシピ
+        = link_to "/users/#{@user.id}/show_reports" do
+          %li.users__mypage__tabs__tab
+            つくれぽ
+      .users__mypage__container
+        .users__mypage__container__title
+          %h1 レシピ一覧（最新順）
+        .users__mypage__container__recipes__container
+          -if @recipes.present?
+            - @recipes.each do |recipe|
+              .users__mypage__container__recipes__container__content
+                .users__mypage__container__recipes__container__content--left__box
+                  = link_to recipe_path(recipe) do
+                    = image_tag recipe.top_image.url
+                .users__mypage__container__recipes__container__content--right__box
+                  .users__mypage__container__recipes__container__content--right__box--upper
+                    = link_to recipe_path(recipe), class: "title-link" do
+                      = recipe.title
+                    %span by
+                    = link_to user_path(recipe.user), class: "user-link" do
+                      = @user.name
+                  .users__mypage__container__recipes__container__content--right__box--center
+                    = simple_format recipe.introduction
+                  .users__mypage__container__recipes__container__content--right__box--row
+                    材料：
+                    - recipe.foods.each do |food|
+                      = food.food_name
+                  .users__mypage__container__recipes__container__content--right__box--last
+                    - if user_signed_in? && current_user.id == @user.id
+                      = link_to "削除", recipe_path(recipe), method: :delete, data: {confirm: "削除しますか？"}, class: "delete-btn"
+                      = link_to "編集", edit_recipe_path(recipe), class: "edit-btn"
+                .clear
+          - else
+            %p.message 投稿したレシピはありません
+        = paginate(@recipes)
   = render 'layouts/side_bar'
      

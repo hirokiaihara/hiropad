@@ -1,29 +1,30 @@
 .wrapper
   .container
-    .users__form__body
-      %h2 プロフィールの変更
-      = form_for(current_user) do |f|
-        .user_image_field
-          %label(for="user_user_image")
-            %img#user_img_prev.hidden
-            - if current_user.user_image.present?
-              = image_tag current_user.user_image.url, class: "user_present_img"
-            - else
-              =image_tag "member_photo_noimage_thumb.png", class: "user_present_img"
-            = f.file_field :user_image, class: "hidden"
-        .field
-          %p ニックネーム
-          %p ※10字以内。
-          = f.text_field :name, autofocus: true
-        .field
-          %p 自己紹介・コメント
-          %p ※120字以内。
-          = f.text_area :users_comment
-        .field
-          %p メールアドレスの変更
-          .field-input
+    .users__edit__form
+      .users__edit__form__title
+        %h2 プロフィールの変更
+        = form_for(current_user) do |f|
+          .users__edit__form__image__field
+            %h3 プロフィール画像の設定
+            %label(for="user_user_image")
+              %img#user_img_prev.hidden
+              - if current_user.user_image.present?
+                = image_tag current_user.user_image.url, class: "user_present_img"
+              - else
+                =image_tag "member_photo_noimage_thumb.png", class: "user_present_img"
+              = f.file_field :user_image, class: "hidden"
+          .users__edit__form__name__field
+            %h3 ニックネーム
+            %p ※10字以内。
+            = f.text_field :name, autofocus: true
+          .users__edit__form__comment__field
+            %h3 自己紹介・コメント
+            %p ※120字以内。
+            = f.text_area :users_comment
+          .users__edit__form__email__field
+            %h3 メールアドレスの変更
             = f.email_field :email
-        .field
-          = f.submit "更新", class: 'btn'
-        = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'
+          .users__edit__form__submit__field
+            = f.submit "更新", class: 'btn edit'
+            = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'
   = render 'layouts/side_bar'

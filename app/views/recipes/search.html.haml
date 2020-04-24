@@ -31,7 +31,7 @@
                       = food.food_name
                 .clear
           - else
-            %p 一致するレシピはありませんでした。
-            %p ひらがなやカタカナ、漢字で検索したみてください。
+            %p.message 一致するレシピはありませんでした。
+            %p.message ひらがなやカタカナ、漢字で検索してみてください。
         = paginate(@recipes)
   = render 'layouts/side_bar'

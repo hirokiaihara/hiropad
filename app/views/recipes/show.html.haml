@@ -75,7 +75,7 @@
         -else 
           %p.message つくれぽの投稿はまだありません
       .make__report__container
-        - if current_user.id != @recipe.user_id
+        - if user_signed_in? && current_user.id != @recipe.user_id
           #open-report-modal.open-btn
             %i.fas.fa-edit
               つくれぽを書く
