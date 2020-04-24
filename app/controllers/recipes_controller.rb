@@ -1,6 +1,8 @@
 class RecipesController < ApplicationController
-  # before_action :authenticate_user!
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :move_to_root, only: [:update, :edit, :destroy]
   before_action :set_recipe, except: [:index, :new, :create, :search]
+  
   def index
     @recipes = Recipe.includes(:foods, :makes).order('created_at desc').limit(12)
     @ranks = Recipe.create_ranks
@@ -31,7 +33,7 @@ class RecipesController < ApplicationController
     
     if @recipe.update(recipe_params)
       redirect_to recipe_path(@recipe)
-    else
+    elseroy
       render :edit
     end
   end
@@ -69,4 +71,10 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
   end
 
+  def move_to_root
+    @recipe = Recipe.find(params[:id])
+    if  @recipe.user_id != current_user.id
+      redirect_to root_path
+    end
+  end
 end

@@ -1,4 +1,5 @@
 class MyrecipesController < ApplicationController
+  before_action :authenticate_user!, only: [:create, :destroy, :myrecipe_destroy]
   def create
     @myrecipe = Myrecipe.new(user_id: current_user.id, recipe_id: params[:recipe_id])
     if @myrecipe.save

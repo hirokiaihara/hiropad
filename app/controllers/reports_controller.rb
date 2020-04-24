@@ -1,4 +1,5 @@
 class ReportsController < ApplicationController
+  before_action :authenticate_user!, only: [:create, :destroy]
   
   def create
     @report = Report.new(report_params)
