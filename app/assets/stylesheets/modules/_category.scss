@@ -33,7 +33,7 @@
     display: flex;
     padding-left: 10px;
     padding-top: 10px;
-    &__container, &__container {
+    &__container {
       width: 25%;
       .index {
         font-weight: bold;
@@ -48,12 +48,11 @@
   }
   #close-category-modal.btn {
     width: 70px;
-    float: right;
+    margin: 10px 15px;
   }
-}
-
-#category-modal p {
-  line-height: 30px;
+  .btn:hover {
+    border-bottom: solid 2px;
+  }
 }
 
 #category-mask.hidden {

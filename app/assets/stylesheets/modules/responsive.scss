@@ -1,0 +1,347 @@
+@media (max-width: 1000px) {
+  .service__header {
+    justify-content: center;
+    .link-logo {
+      a {
+        h1 {
+        font-size: 23px;
+        }
+        p {
+          font-size: 10px;
+        }
+        img {
+          height: 50px;
+        }
+      }
+    }
+    .search__field {
+      #keyword {
+        width: 200px;
+      }
+      .search-btn {
+        height: 30px;
+      }
+      #open-category-modal {
+        color: $font_color;
+        width: 180px;
+        margin-left: 10px;
+        display: inline-block;
+      }
+    }
+    .service__field {
+      line-height: 35px;
+      padding-bottom: 3px;
+      .btn {
+        margin-left: 0px;
+      }
+    }
+  }
+  .header__image {
+    h1 {
+      font-size: 27px;
+    }
+    h2 {
+      font-size: 22px;
+    }
+    h3 {
+      font-size: 20px;
+    }
+    h4 {
+      font-size: 17px;
+    }
+    p {
+      font-size: 15px;
+    }
+    span {
+      font-size: 17px;
+    }
+    a {
+      font-size: 17px;
+      
+    }
+    .login {
+      font-size: 17px;
+    }
+
+    &__contents__users__field--flex {
+      &__image {
+        img {
+          width: 120px;
+          height: 120px;
+        }
+      }
+    }
+  }
+  //トップページ
+  .index__recipe__page {
+    .title__field {
+      font-size: 25px;
+    }
+    &__ranks__field {
+      &__first__box {
+        width: 45%;
+        .image-box {
+          img {
+            width: 100%;
+          }
+        }
+        span {
+          font-size: 15px;
+        }
+      }
+      &__after__box {
+        width: 45%;
+        .image-box {
+          img {
+            width: 100%;
+            object-fit: cover;
+            border-radius: 5px;
+          }
+        }
+        span {
+          font-size: 15px;
+        }
+      }
+    }
+    //カテゴリー一覧
+    &__category__field {
+      border-top: solid 1px $border_color;
+      #main_color {
+        background-color: $main_color;
+      }
+      h2 {
+        color: $font_color;
+        font-size: 20px;
+      }
+      .upper__field, .row__field {
+        flex-wrap: wrap;
+        &__container {
+          width: 50%;
+          .index {
+            font-size: 25px;
+          }
+          .contents {
+            a {
+              font-size: 20px;
+            }
+          }
+        }
+      }
+    }
+    //新着投稿
+    &__new__field {
+      &--flex {
+        &__recipe__box {
+          width: 31%;
+          .image-box {
+            img {
+              width: 100%;
+            }
+          }
+          span {
+            font-size: 13px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 670px) {
+  .service__header {
+    display: block;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    border-bottom: solid 1px $border_color;
+    .link-logo {
+      display: none;
+      a {
+        h1 {
+        font-size: 23px;
+        }
+        p {
+          font-size: 10px;
+        }
+        img {
+          height: 50px;
+        }
+      }
+    }
+    .search__field {
+      padding-bottom: 3px;
+      #keyword {
+        width: 200px;
+      }
+      .search-btn {
+        height: 30px;
+      }
+      #open-category-modal {
+        color: $font_color;
+        width: 180px;
+        margin-left: 10px;
+        display: inline-block;
+      }
+    }
+    .service__field {
+      text-align: center;
+      line-height: 35px;
+      padding-bottom: 3px;
+      .left {
+        background-color: $orenge;
+        color: #ffffff;
+        padding: 10px 7px;
+        margin-left: 5px;
+      }
+      .btn {
+        margin: 5px;
+      }
+    }
+  }
+  .header__image {
+    background-image: image-url('dish.jpg');
+    margin-top: 140px;
+    h1 {
+      font-size: 27px;
+    }
+    h2 {
+      font-size: 22px;
+    }
+    h3 {
+      font-size: 20px;
+    }
+    h4 {
+      font-size: 17px;
+    }
+    p {
+      font-size: 15px;
+    }
+    span {
+      font-size: 17px;
+    }
+    a {
+      font-size: 17px;
+      
+    }
+    .login {
+      font-size: 17px;
+    }
+
+    &__contents__users__field--flex {
+      &__image {
+        img {
+          width: 120px;
+          height: 120px;
+        }
+      }
+    }
+  }
+  //トップページ
+  .index__recipe__page {
+    .title__field {
+      font-size: 25px;
+    }
+    &__ranks__field {
+      &__first__box {
+        width: 100%;
+        .image-box {
+          img {
+            width: 100%;
+          }
+        }
+        .title-box {
+          font-size: 23px;
+        }
+        span {
+          font-size: 17px;
+        }
+      }
+      &__after__box {
+        width: 40%;
+        .image-box {
+          img {
+            width: 100%;
+            object-fit: cover;
+            border-radius: 5px;
+          }
+        }
+        span {
+          font-size: 15px;
+        }
+      }
+    }
+    //カテゴリー一覧
+    &__category__field {
+      border-top: solid 1px $border_color;
+      #main_color {
+        background-color: $main_color;
+      }
+      h2 {
+        color: $font_color;
+        font-size: 20px;
+      }
+      .upper__field, .row__field {
+        flex-wrap: wrap;
+        &__container {
+          width: 50%;
+          .index {
+            font-size: 18px;
+          }
+          .contents {
+            a {
+              font-size: 18px;
+            }
+          }
+        }
+      }
+    }
+    //新着投稿
+    &__new__field {
+      &--flex {
+        &__recipe__box {
+          width: 45%;
+          .image-box {
+            img {
+              width: 100%;
+            }
+          }
+          span {
+            font-size: 13px;
+          }
+        }
+      }
+    }
+  }
+  //カテゴリーモーダル
+  #category-modal {
+    width: 90%;
+    position: absolute;
+    top: 100px;
+    h2 {
+      font-size: 17px;
+    }
+    .upper__field, .row__field {
+      flex-wrap: wrap;
+      &__container {
+        width: 50%;
+        .index {
+          font-size: 17px;
+        }
+      }
+    }
+    .close-area {
+      text-align: center;
+    }
+    #close-category-modal.btn {
+      color: #fff;
+      font-weight: bold;
+      text-align: center;
+      width: 200px;
+      background-color: $orenge;
+      margin: 10px auto;
+
+    }
+  }
+}
