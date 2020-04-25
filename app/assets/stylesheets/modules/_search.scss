@@ -70,3 +70,78 @@
     }
   }
 }
+//スマフォ表示
+@media (max-width: 670px) { 
+  .search__result__page {
+    padding-top: 140px;
+    background-color: #ffffff;
+    border: solid 1px $border_color;
+    border-radius: 3px;
+    .message {
+      margin-left: 20px;
+    }
+    &__body {
+      &__title__field {
+        margin-left: 20px;
+        padding-top: 20px;
+        h1 {
+          font-size: 30px;
+          color: $green;
+          font-weight: bold;
+          display: inline-block;
+        }
+        span {
+          color: $font_color;
+        }
+      }
+      &__recipes__container {
+        &__content {
+          margin: 10px 20px;
+        a:hover {
+          opacity: 0.8;
+        }
+          &--left__box {
+            float: left;
+            margin-right: 20px;
+             img {
+               height: 180px;
+               width: 120px;
+               object-fit: cover;
+             }
+          }
+          &--right__box {
+            &--upper {
+              a {
+                border-bottom: 1px solid;
+              }
+              a.title-link {
+                color: $green;
+                font-size: 25px;
+                font-weight: bold;
+              }
+              span {
+                color: $font_color;
+                font-size: 15px;
+              }
+              a.user-link {
+                color: $orenge;
+                font-size: 20px;
+              }
+            }
+            &--center {
+              color: $font_color;
+              width: 95%;
+            }
+            &--row {
+              color: $sub_font_color;
+              font-size: 15px;
+            }
+          }
+          .clear {
+            clear: left;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,414 @@
+@media (max-width: 1000px) {
+  .show__recipe__page {
+    .upper-flex-container {
+      display: flex;
+      justify-content: space-between;
+    }
+    &__title__field {
+      padding: 10px 20px;
+      font-size: 40px;
+      font-weight: bold;
+      color: $green;
+    }
+    &__myrecipe__field {
+      padding: 13px 13px;
+      a {
+        display: inline-block;
+        width: 220px;
+        height: 35px;
+        padding: 3px 12px;
+        border: solid 1px $border_color;
+        border-radius: 3px;
+        background-color: $main_color;
+        font-size: 19px;
+        color: $font_color;
+      }
+      a:hover {
+        opacity: 0.8;
+      }
+    }
+    .center-flex-container {
+      display: flex;
+    }
+    .row-field {
+      display: flex;
+      justify-content: space-between;
+    }
+    &__top_image__field {
+      margin-left: 20px;
+      img {
+        width: 280px;
+      }
+    }
+    &__introduction__field {
+      padding: 5px 20px;
+      font-size: 18px;
+      color: $font_color;
+      width: 400px;
+      span {
+        font-size: 15px;
+      }
+      a {
+        border-bottom: 1px solid;
+      }
+    }
+    &__foods__field {
+      margin: 30px 20px;
+      color: $font_color;
+      width: 100%;
+      h3 {
+        font-size: 25px;
+        font-weight: bold;
+      }
+      .upper-field {
+        padding-bottom: 5px;
+        border-bottom: 1px solid ;
+      }
+      .row-field {
+        margin-top: 2px;
+        padding-bottom: 5px;
+        border-bottom: 1px solid;
+      }
+    }
+    h3 {
+      font-size: 25px;
+      font-weight: bold;
+      margin-left: 10px;
+    }
+    &__makes__field {
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: 20px;
+      color: $font_color;
+      font-size: 18px;
+      span {
+        font-size: 20px;
+        font-weight: bold;
+      }
+      &__content {
+        width: 30%;
+        margin-left: 10px;
+        img {
+          width: 100%;
+        }
+        .text-box {
+          margin-left: 5px;
+          width: 100%;
+        }
+      }
+    }
+    &__row__flex__field {
+      display: flex;
+      color: $font_color;
+      margin-left: 20px;
+      padding-bottom: 20px;
+      h3 {
+        font-size: 20px;
+        font-weight: bold;
+        padding: 10px 0 10px;
+      }
+      p {
+        font-size: 20px;
+      }
+      .left-field {
+        width: 280px;
+      }
+      .right-field {
+        width: 280px;
+        margin-left: 20px;
+      }
+    }
+    .date {
+      margin-left: 20px;
+    }
+    .delete-btn, .edit-btn {
+      display: inline-block;
+      margin: 15px 15px;
+      height: 37px;
+      background-color: $orenge;
+      padding: 5px;
+      color: #ffffff;
+      font-weight: bold;
+      float: right;
+    }
+    .delete-btn:hover {
+      opacity: 0.8;
+    }
+    .clear {
+      clear: right;
+    }
+    .show__reports__container {
+      color: $font_color;
+      p.message {
+        margin-left: 20px;
+        font-size: 25px;
+      }
+      padding-bottom: 20px;
+      h2 {
+        background-color: $main_color;
+        border: solid 1px $border_color;
+        padding: 5px 20px;
+        font-size: 25px;
+      }
+      &--flex {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .report__box {
+        margin-top: 5px;
+        margin-left: 7px;
+        border: solid 1px $border_color;
+        border-radius: 3px;
+        padding: 5px;
+        width: 32%;
+        .date-box {
+          font-size: 10px;
+          float: right;
+        }
+        img {
+          width: 100%;
+        }
+        &__text__box {
+          width: 100%;
+          span {
+            font-size: 10px;
+          }
+          a {
+            border-bottom: solid 1px;
+            font-size: 20px;
+          }
+          p {
+            font-size: 20px;
+          } 
+        }
+      }
+    }
+    .make__report__container {
+      padding-bottom: 20px;
+    }
+    .open-btn {
+      width: 200px;
+      border: solid 1px $border_color;
+      border-radius: 3px;
+      background-color: #ececec;
+      padding: 3px 10px;
+      margin-left: 20px;
+      font-size: 20px;
+      margin: 0px auto;
+    }
+    .open-btn:hover {
+      opacity: 0.8;
+    }
+  }
+  
+}
+@media (max-width: 670px) {
+  .show__recipe__page {
+    padding-top: 140px;
+    .upper-flex-container {
+      display: block;
+      justify-content: space-between;
+    }
+    &__title__field {
+      padding: 5px 13px;
+      font-size: 28px;
+      font-weight: bold;
+      color: $green;
+    }
+    &__myrecipe__field {
+      padding: 5px 13px;
+      a {
+        display: inline-block;
+        width: 220px;
+        height: 35px;
+        padding: 3px 12px;
+        border: solid 1px $border_color;
+        border-radius: 3px;
+        background-color: $main_color;
+        font-size: 19px;
+        color: $font_color;
+      }
+      a:hover {
+        opacity: 0.8;
+      }
+    }
+    .center-flex-container {
+      display: block;
+    }
+    .row-field {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+    &__top_image__field {
+      margin-left: 20px;
+      img {
+        width: 93%;
+      }
+    }
+    &__introduction__field {
+      padding: 5px 20px;
+      font-size: 18px;
+      color: $font_color;
+      width: 100%;
+      span {
+        font-size: 15px;
+      }
+      a {
+        border-bottom: 1px solid;
+      }
+    }
+    &__foods__field {
+      margin: 10px 20px;
+      color: $font_color;
+      width: 88%;
+      h3 {
+        font-size: 25px;
+        font-weight: bold;
+      }
+      .upper-field {
+        padding-bottom: 5px;
+        border-bottom: 1px solid ;
+      }
+      .row-field {
+        margin-top: 2px;
+        padding-bottom: 5px;
+        border-bottom: 1px solid;
+      }
+    }
+    h3 {
+      font-size: 25px;
+      font-weight: bold;
+      margin-left: 10px;
+    }
+    &__makes__field {
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: 20px;
+      color: $font_color;
+      font-size: 18px;
+      span {
+        font-size: 20px;
+        font-weight: bold;
+      }
+      &__content {
+        width: 44%;
+        margin-left: 10px;
+        img {
+          width: 100%;
+        }
+        .text-box {
+          margin-left: 5px;
+          width: 100%;
+        }
+      }
+    }
+    &__row__flex__field {
+      display: block;
+      color: $font_color;
+      margin-left: 20px;
+      padding-bottom: 20px;
+      h3 {
+        font-size: 20px;
+        font-weight: bold;
+        padding: 10px 0 10px;
+      }
+      p {
+        font-size: 20px;
+      }
+      .left-field {
+        width: 100%;
+      }
+      .right-field {
+        width: 100%;
+        margin-left: 0px;
+      }
+    }
+    .date {
+      margin-left: 20px;
+    }
+    .delete-btn, .edit-btn {
+      text-align: center;
+      display: block;
+      width: 250px;
+      font-size: 25px;
+      height: 37px;
+      line-height: 37px;
+      background-color: $orenge;
+      padding: 5px;
+      color: #ffffff;
+      font-weight: bold;
+      float: none;
+      margin: 15px auto;
+    }
+    .delete-btn:hover {
+      opacity: 0.8;
+    }
+    .clear {
+      clear: right;
+    }
+    .show__reports__container {
+      color: $font_color;
+      p.message {
+        margin-left: 20px;
+        font-size: 20px;
+      }
+      padding-bottom: 20px;
+      h2 {
+        background-color: $main_color;
+        border: solid 1px $border_color;
+        padding: 5px 20px;
+        font-size: 22px;
+      }
+      &--flex {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .report__box {
+        margin-top: 5px;
+        margin-left: 7px;
+        border: solid 1px $border_color;
+        border-radius: 3px;
+        padding: 5px;
+        width: 47%;
+        .date-box {
+          font-size: 10px;
+          float: right;
+        }
+        img {
+          width: 100%;
+        }
+        &__text__box {
+          width: 100%;
+          span {
+            font-size: 10px;
+          }
+          a {
+            border-bottom: solid 1px;
+            font-size: 20px;
+          }
+          p {
+            font-size: 20px;
+          } 
+        }
+      }
+    }
+    .make__report__container {
+      padding-bottom: 20px;
+    }
+    .open-btn {
+      width: 300px;
+      border: solid 1px $border_color;
+      border-radius: 3px;
+      background-color: #ececec;
+      padding: 3px 0px;
+      text-align: center;
+      margin-left: 20px;
+      font-size: 20px;
+      margin: 0px auto;
+    }
+    .open-btn:hover {
+      opacity: 0.8;
+    }
+  }
+}
