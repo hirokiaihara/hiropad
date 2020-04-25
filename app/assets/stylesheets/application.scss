@@ -1,5 +1,6 @@
 @import "reset";
 @import "modules/colors";
+
 @import "modules/top_page";
 @import "modules/users";
 @import "modules/recipe";
@@ -8,8 +9,8 @@
 @import "modules/show_recipe";
 @import "modules/search";
 @import "modules/devise";
-@import "modules/side_bar";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "modules/flash";
+@import "modules/responsive.scss";
 

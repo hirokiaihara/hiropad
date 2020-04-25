@@ -2,10 +2,12 @@
 %html
   %head
     %meta{content: "text/html; charset=UTF-8", "http-equiv": "Content-Type"}/
+    %meta{name: "viewport", content: "width=device-width, initial-scale=1.0"}/
     %title Hiropad
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
   %body
     %header
       .container
@@ -48,95 +50,104 @@
                       %i.fas.fa-carrot 
                       野菜
                     .contents
-                      %p 
-                        = link_to "キャベツ", search_recipes_path(keyword: "キャベツ")
-                      %p 
-                        = link_to "白菜", search_recipes_path(keyword: "白菜")
-                      %p
-                        = link_to "じゃがいも", search_recipes_path(keyword: "じゃがいも")
+                      %ul
+                        %li
+                          = link_to "キャベツ", search_recipes_path(keyword: "キャベツ")
+                        %li
+                          = link_to "白菜", search_recipes_path(keyword: "白菜")
+                        %li
+                          = link_to "じゃがいも", search_recipes_path(keyword: "じゃがいも")
                   .upper__field__container
                     .index
                       %i.fas.fa-drumstick-bite
                       お肉の料理
                     .contents
-                      %p
-                        = link_to "豚肉", search_recipes_path(keyword: "豚肉")
-                      %p
-                        = link_to "牛肉", search_recipes_path(keyword: "牛肉")
-                      %p
-                        = link_to "鶏肉", search_recipes_path(keyword: "鶏肉")
+                      %ul
+                        %li
+                          = link_to "豚肉", search_recipes_path(keyword: "豚肉")
+                        %li
+                          = link_to "牛肉", search_recipes_path(keyword: "牛肉")
+                        %li
+                          = link_to "鶏肉", search_recipes_path(keyword: "鶏肉")
                   .upper__field__container
                     .index
                       %i.fas.fa-fish 
                       お魚の料理
                     .contents
-                      %p 
-                        = link_to "さば", search_recipes_path(keyword: "さば")
-                      %p 
-                        = link_to "アジ", search_recipes_path(keyword: "アジ")
-                      %p
-                        = link_to "イカ", search_recipes_path(keyword: "イカ")
+                      %ul
+                        %li
+                          = link_to "さば", search_recipes_path(keyword: "さば")
+                        %li
+                          = link_to "アジ", search_recipes_path(keyword: "アジ")
+                        %li
+                          = link_to "イカ", search_recipes_path(keyword: "イカ")
                   .upper__field__container
                     .index
                       %i.fas.fa-apple-alt
                       サラダ
                     .contents
-                      %p 
-                        = link_to "生春巻き", search_recipes_path(keyword: "生春巻き")
-                      %p 
-                        = link_to "和風サラダ", search_recipes_path(keyword: "和風サラダ")
-                      %p
-                        = link_to "洋風サラダ", search_recipes_path(keyword: "洋風サラダ")
+                      %ul
+                        %li
+                          = link_to "生春巻き", search_recipes_path(keyword: "生春巻き")
+                        %li
+                          = link_to "和風サラダ", search_recipes_path(keyword: "和風サラダ")
+                        %li
+                          = link_to "洋風サラダ", search_recipes_path(keyword: "洋風サラダ")
                 .upper__field
                   .row__field__container
                     .index
                       %i.fas.fa-hamburger
                       ごはん
                     .contents
-                      %p  
-                        = link_to "丼", search_recipes_path(keyword: "丼")
-                      %p 
-                        = link_to "ピラフ", search_recipes_path(keyword: "ピラフ")
-                      %p
-                        = link_to "チャーハン", search_recipes_path(keyword: "チャーハン")
+                      %ul
+                        %li 
+                          = link_to "丼", search_recipes_path(keyword: "丼")
+                        %li
+                          = link_to "ピラフ", search_recipes_path(keyword: "ピラフ")
+                        %li
+                          = link_to "チャーハン", search_recipes_path(keyword: "チャーハン")
                   .row__field__container
                     .index
                       %i.fas.fa-pizza-slice
                       パスタ・グラタン
                     .contents
-                      %p
-                        = link_to "パスタ", search_recipes_path(keyword: "パスタ")
-                      %p
-                        = link_to "グラタン", search_recipes_path(keyword: "グラタン")
-                      %p
-                        = link_to "ニョッキ", search_recipes_path(keyword: "ニョッキ")
+                      %ul
+                        %li
+                          = link_to "パスタ", search_recipes_path(keyword: "パスタ")
+                        %li
+                          = link_to "グラタン", search_recipes_path(keyword: "グラタン")
+                        %li
+                          = link_to "ニョッキ", search_recipes_path(keyword: "ニョッキ")
                   .row__field__container
                     .index
                       %i.fas.fa-bacon 
                       麺
                     .contents
-                      %p 
-                        = link_to "そば", search_recipes_path(keyword: "そば")
-                      %p 
-                        = link_to "うどん", search_recipes_path(keyword: "うどん")
-                      %p
-                        = link_to "ラーメン", search_recipes_path(keyword: "ラーメン")
+                      %ul
+                        %li
+                          = link_to "そば", search_recipes_path(keyword: "そば")
+                        %li
+                          = link_to "うどん", search_recipes_path(keyword: "うどん")
+                        %li
+                          = link_to "ラーメン", search_recipes_path(keyword: "ラーメン")
                   .row__field__container
                     .index
                       %i.fas.fa-bread-slice
                       パン・ケーキ
                     .contents
-                      %p 
-                        = link_to "パン", search_recipes_path(keyword: "パン")
-                      %p 
-                        = link_to "ホットケーキ", search_recipes_path(keyword: "ホットケーキ")
-                      %p
-                        = link_to "ケーキ", search_recipes_path(keyword: "ケーキ")
-                #close-category-modal.btn
-                  閉じる
+                      %ul
+                        %li
+                          = link_to "パン", search_recipes_path(keyword: "パン")
+                        %li
+                          = link_to "ホットケーキ", search_recipes_path(keyword: "ホットケーキ")
+                        %li
+                          = link_to "ケーキ", search_recipes_path(keyword: "ケーキ")
+                .close-area
+                  #close-category-modal.btn
+                    閉じる
         .service__field
           - if user_signed_in?
-            = link_to "/users/#{current_user.id}/myrecipes" do
+            = link_to "/users/#{current_user.id}/myrecipes", class: 'left' do
               %i.fas.fa-folder マイレシピ
             = link_to new_recipe_path, class: 'btn' do
               %i.fas.fa-edit レシピを書く
