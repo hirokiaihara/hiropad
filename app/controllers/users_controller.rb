@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :show_recipes, :show_reports]
   
   def show
-    @recipes = @user.recipes.order('created_at DESC').limit(5)
+    @recipes = @user.recipes.order('created_at DESC').limit(6)
     @reports = @user.reports.order('created_at DESC').limit(6)
   end
 
