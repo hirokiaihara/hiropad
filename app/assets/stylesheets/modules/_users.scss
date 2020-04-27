@@ -156,6 +156,7 @@
   }
   &__recipes__container {
     &__content {
+      
       margin: 10px 20px;
       display: flex;
       &--left__box {
@@ -213,7 +214,7 @@
 }
 //マイページ・つくれぽ一覧
 .users__mypage__row__container {
-  &__reports__box__report__title {
+  &__reports__box__report {
     width: 150px;
   }
   h3 {
