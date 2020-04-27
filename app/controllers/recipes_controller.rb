@@ -32,8 +32,10 @@ class RecipesController < ApplicationController
   def update
     
     if @recipe.update(recipe_params)
+      flash[:notice] = "レシピを更新しました。"
       redirect_to recipe_path(@recipe)
     else
+      flash[:alert] = "更新できません"
       render :edit
     end
   end
