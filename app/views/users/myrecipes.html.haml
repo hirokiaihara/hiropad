@@ -1,31 +1,31 @@
 .wrapper
   .container
-    .users__mypage
-      .users__mypage__container
-        .users__mypage__container__title
+    .users__myrecipes
+      .users__myrecipes__container
+        .users__myrecipes__container__title
           %h1 マイレシピに保存したレシピ
-        .users__mypage__container__recipes__container
+        .users__myrecipes__container__recipes__container
           -if @myrecipes.present?
             - @myrecipes.each do |myrecipe|
               - recipe = Recipe.find_by(id: myrecipe.recipe_id)
-              .users__mypage__container__recipes__container__content
-                .users__mypage__container__recipes__container__content--left__box
+              .users__myrecipes__container__recipes__container__content
+                .users__myrecipes__container__recipes__container__content--left__box
                   = link_to recipe_path(recipe) do
                     = image_tag recipe.top_image.url
-                .users__mypage__container__recipes__container__content--right__box
-                  .users__mypage__container__recipes__container__content--right__box--upper
+                .users__myrecipes__container__recipes__container__content--right__box
+                  .users__myrecipes__container__recipes__container__content--right__box--upper
                     = link_to recipe_path(recipe), class: "title-link" do
                       = recipe.title
                     %span by
                     = link_to user_path(recipe.user_id), class: "user-link" do
                       = recipe.user.name
-                  .users__mypage__container__recipes__container__content--right__box--center
+                  .users__myrecipes__container__recipes__container__content--right__box--center
                     = simple_format recipe.introduction
-                  .users__mypage__container__recipes__container__content--right__box--row
+                  .users__myrecipes__container__recipes__container__content--right__box--row
                     材料：
                     - recipe.foods.each do |food|
                       = food.food_name
-                  .users__mypage__container__recipes__container__content--right__box--last
+                  .users__myrecipes__container__recipes__container__content--right__box--last
                     = link_to "/myrecipes/#{recipe.id}/myrecipe_destroy", {method: "post"} do
                       %i.fas.fa-folder マイレシピから削除
               .clear

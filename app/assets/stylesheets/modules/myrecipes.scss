@@ -1,0 +1,139 @@
+.users__myrecipes__container {
+  background-color: #ffffff;
+  a:hover {
+    opacity: 0.8;
+  }
+  &__title {
+    padding: 5px 20px;
+    border-bottom: 1px solid $border_color;
+  }
+  &__recipes__container {
+    &__content {
+      margin: 10px 20px;
+      display: flex;
+      &--left__box {
+        img {
+          height: 180px;
+          width: 120px;
+          object-fit: cover;
+        }
+      }
+      &--right__box {
+        margin-left: 20px;
+        &--upper {
+          a {
+            border-bottom: 1px solid;
+          }
+          a.title-link {
+            color: $green;
+            font-size: 25px;
+            font-weight: bold;
+          }
+          span {
+            color: $font_color;
+            font-size: 15px;
+          }
+          a.user-link {
+            color: $orenge;
+            font-size: 20px;
+          }
+        }
+        &--center {
+          color: $font_color;
+          width: 80%;
+        }
+        &--row {
+          color: $sub_font_color;
+            font-size: 15px;
+            padding-bottom: 5px;
+        }
+        &--last {
+          .delete-btn, .edit-btn {
+            display: inline-block;
+            margin-left: 5px;
+            height: 25px;
+            line-height: 25px;
+            background-color: $orenge;
+            padding: 0px 10px;
+            color: #ffffff;
+            font-weight: bold;
+            border-radius: 2px;;
+          }
+        }
+      }
+    }
+  }
+  p.message {
+    margin-left: 20px;
+  }
+}
+//マイレシピタブレット表示
+@media (max-width: 670px) {
+  .users__myrecipes__container {
+    padding-top: 140px;
+    background-color: #ffffff;
+    a:hover {
+      opacity: 0.8;
+    }
+    &__title {
+      padding: 5px 20px;
+      border-bottom: 1px solid $border_color;
+    }
+    &__recipes__container {
+      &__content {
+        margin: 10px 20px;
+        display: flex;
+        &--left__box {
+          img {
+            height: 180px;
+            width: 120px;
+            object-fit: cover;
+          }
+        }
+        &--right__box {
+          margin-left: 20px;
+          &--upper {
+            a {
+              border-bottom: 1px solid;
+            }
+            a.title-link {
+              color: $green;
+              font-size: 21px;
+              font-weight: bold;
+            }
+            span {
+              color: $font_color;
+              font-size: 15px;
+            }
+            a.user-link {
+              color: $orenge;
+              font-size: 20px;
+            }
+          }
+          &--center {
+            color: $font_color;
+            width: 90%;
+          }
+          &--row {
+            color: $sub_font_color;
+              font-size: 15px;
+              padding-bottom: 5px;
+          }
+          &--last {
+            .delete-btn, .edit-btn {
+              display: inline-block;
+              margin-left: 5px;
+              height: 25px;
+              line-height: 25px;
+              background-color: $orenge;
+              padding: 0px 10px;
+              color: #ffffff;
+              font-weight: bold;
+              border-radius: 2px;;
+            }
+          }
+        }
+      }
+    }
+  }
+}

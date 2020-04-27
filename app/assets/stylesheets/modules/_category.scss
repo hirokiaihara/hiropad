@@ -62,3 +62,34 @@
 #category-modal.hidden {
   transform: translate(0, -500px);
 }
+//スマフォ表示
+@media (max-width: 670px) {
+  #category-modal {
+    width: 90%;
+    position: absolute;
+    top: 50px;
+    h2 {
+      font-size: 17px;
+    }
+    .upper__field, .row__field {
+      flex-wrap: wrap;
+      &__container {
+        width: 50%;
+        .index {
+          font-size: 17px;
+        }
+      }
+    }
+    .close-area {
+      text-align: center;
+    }
+    #close-category-modal.btn {
+      color: #fff;
+      font-weight: bold;
+      text-align: center;
+      width: 200px;
+      background-color: $orenge;
+      margin: 10px auto;
+    }
+  }
+}

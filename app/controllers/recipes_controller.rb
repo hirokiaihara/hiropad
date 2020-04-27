@@ -21,7 +21,7 @@ class RecipesController < ApplicationController
       flash[:notice] = "レシピを公開しました。"
       redirect_to root_path
     else
-      flash[:alert] = "投稿できませんでした。タイトルと料理写真は必須です。"
+      flash[:alert] = "タイトルと料理写真は必須です。"
       render :new
     end
   end

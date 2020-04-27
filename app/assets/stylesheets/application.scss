@@ -3,17 +3,18 @@
 
 @import "modules/top_page";
 @import "modules/users";
-@import "modules/recipe";
+@import "modules/recipe_new";
 @import "modules/report";
 @import "modules/category";
 @import "modules/show_recipe";
 @import "modules/search";
 @import "modules/devise";
+@import "modules/myrecipes.scss";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "modules/flash";
-@import "modules/top_responsive";
-@import "modules/recipe_responsive";
+@import "modules/top_page_responsive";
+@import "modules/recipe_new_responsive";
 @import "modules/show_recipe_responsive";
 @import "modules/users_responsive";
 @import "modules/devise_responsive";

@@ -6,7 +6,7 @@ class ReportsController < ApplicationController
     if @report.save
       redirect_to recipe_path(@report.recipe.id), notice: "つくれぽが投稿されました。"
     else
-      redirect_to recipe_path(@report.recipe.id), alert: "投稿できません。写真とコメントは必須です。"
+      redirect_to recipe_path(@report.recipe.id), alert: "写真とコメントは必須です。"
     end
   end
 
