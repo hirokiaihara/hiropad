@@ -25,8 +25,8 @@
             %span日
         .devise__container__form__password__field
           %h3 パスワードを設定してください
-          %p ※半角8字以上。
-          = f.password_field :password, autocomplete: "off", placeholder: "パスワード(英数字8文字以上)"
+          %p ※半角6字以上。
+          = f.password_field :password, autocomplete: "off", placeholder: "パスワード(英数字6文字以上)"
           %p ※確認用
           = f.password_field :password_confirmation, autocomplete: "off", placeholder: "パスワード(確認用)"
         .devise__container__form__submit__field
