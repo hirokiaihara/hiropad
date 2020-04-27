@@ -83,6 +83,7 @@
       display: flex;
       flex-wrap: wrap;
       &__recipe {
+        width: 150px;
         margin: 5px;
         &__image {
           img {
@@ -96,6 +97,7 @@
           }
         }
         &__title {
+          width: 100%;
           color: $green;
         }
       }
