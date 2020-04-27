@@ -226,6 +226,7 @@ header {
     }
     &__first__box {
       margin: 15px;
+      width: 200px;
       .image-box {
         position: relative;
         i {
@@ -263,6 +264,7 @@ header {
     }
     &__after__box {
       margin: 15px;
+      width: 120px;
       .image-box {
         position: relative;
         i {
@@ -297,6 +299,7 @@ header {
       .image-box:hover {opacity: 0.7;}
       .title-box {
         color: $green;
+        width: 100%;
       }
       span {
         font-size: 13px;
