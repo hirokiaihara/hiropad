@@ -3,6 +3,7 @@
 ![hiropad](https://i.gyazo.com/9af0df65defae354e7ff5b5f31fee6e5.jpg)
 ## 🌐 address 
 ### **https://3.113.152.91** 
+- 専用アカウントが埋め込んであります。
 ## 機能
 - レシピ投稿・・・・・・複数枚の画像をプレビューで確認後投稿することができます。
 - レシピ検索・・・・・・料理名と食材名でレシピを検索します。
@@ -35,8 +36,10 @@
 - 既存のサービスを参考にすることにより、一からオリジナルな機能を開発するよりも、UI/UXの整ったアプリをスピーディに開発することが優先と考えたからです。
 - また、そのためにはCRUD + ログイン/ログアウト機能は最低限実装するべきだと思ったからです。
 ## Responsive Design
+![shotsnapp-1588079387 259](https://user-images.githubusercontent.com/61179665/80490963-12698f00-899d-11ea-96d8-37e8db28fab2.png)
 ## データベース ER図
 ![DB](https://i.gyazo.com/d3c96e3361a78d681b05194f0ebc336a.png)
+
 ## usersテーブル
 
 |Column|Type|Options|
