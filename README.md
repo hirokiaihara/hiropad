@@ -36,7 +36,7 @@
 - 既存のサービスを参考にすることにより、一からオリジナルな機能を開発するよりも、UI/UXの整ったアプリをスピーディに開発することが優先と考えたからです。
 - また、そのためにはCRUD + ログイン/ログアウト機能は最低限実装するべきだと思ったからです。
 ## Responsive Design
-![shotsnapp-1588079387 259](https://user-images.githubusercontent.com/61179665/80490963-12698f00-899d-11ea-96d8-37e8db28fab2.png)
+![shotsnapp-1588079886 821](https://user-images.githubusercontent.com/61179665/80491915-4c876080-899e-11ea-862b-e7af99b9a048.png)
 ## データベース ER図
 ![DB](https://i.gyazo.com/d3c96e3361a78d681b05194f0ebc336a.png)
 
