@@ -152,6 +152,7 @@
       flex-wrap: wrap;
       .makes-content {
         margin-left: 5px;
+        width: 100%;
         #image-box1 {
           width: 100%;
         }
@@ -164,11 +165,13 @@
         }
         i {
           font-weight: normal;
-          font-size: 18px;
+          font-size: 15px;
         }
         .add-pic-btn {
-          display: inline-block;
-          margin-left: 12px;
+          display: block;
+          i {
+            font-size: 15px;
+          }
         }
         .js-file-flex_field {
         }
@@ -415,11 +418,13 @@
         }
         i {
           font-weight: normal;
-          font-size: 18px;
+          font-size: 13px;
         }
         .add-pic-btn {
-          display: inline-block;
-          margin-left: 12px;
+          display: block;
+          i {
+            font-size: 15px;
+          }
         }
         .js-file-flex_field {
         }
