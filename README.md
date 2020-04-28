@@ -38,7 +38,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |image|string||
-|how|text|null: false|
+|how_make|text|null: false|
 |recipe_id|integer|null: false, foreign_key: true|
 
 ### Association
