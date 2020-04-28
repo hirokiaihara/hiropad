@@ -6,6 +6,10 @@
   color: $font_color;
   padding-left: 50px;
   margin-bottom: 30px;
+  h3.bold {
+    font-weight: bold;
+    padding-top: 10px;
+  }
   input {
     width: 300px;
     padding: 3px;
