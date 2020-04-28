@@ -68,14 +68,15 @@
                           削除する
                         - if @recipe.persisted?
                           = make.check_box :_destroy, data:{ index: make.index }, class: 'hidden-destroy'
+                  
                   - if @recipe.persisted? && @recipe.makes.count < 6
                     %label(for="recipe_makes_attributes_#{@recipe.makes.count}_image")
                       .add-pic-btn
                         %i.fas.fa-edit 
-                          カードを追加
-                      .js-file_group{"data-index" => "#{@recipe.makes.count}"}
-                        = file_field_tag :image, name: "recipe[makes_attributes][#{@recipe.makes.count}][image]", id: "recipe_makes_attributes_#{@recipe.makes.count}_image", class: 'js-file hidden'
-                        %textarea{class: "js-file", type: "text", name: "recipe[makes_attributes][#{@recipe.makes.count}][how_make]", id: "recipe_makes_attributes_#{@recipe.makes.count}_how_make"}
+                          写真と作り方を追加
+                    .js-file_group{"data-index" => "#{@recipe.makes.count}"}
+                      = file_field_tag :image, name: "recipe[makes_attributes][#{@recipe.makes.count}][image]", id: "recipe_makes_attributes_#{@recipe.makes.count}_image", class: 'js-file hidden'
+                      %textarea{class: "js-file", type: "text", name: "recipe[makes_attributes][#{@recipe.makes.count}][how_make]", id: "recipe_makes_attributes_#{@recipe.makes.count}_how_make"}
           .textarea__field
             .field--left
               %p コツ・ポイント
