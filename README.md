@@ -1,4 +1,4 @@
-# アプリ概要
+# アプリ概要 *Wht's hiropad?*
 ## 毎日の料理を楽しくするレシピ検索アプリです
 ![hiropad](https://i.gyazo.com/9af0df65defae354e7ff5b5f31fee6e5.jpg)
 ## 🌐 address 
@@ -13,9 +13,30 @@
 - マイレシピ機能・・・気になったレシピを保存することが出来ます。
 - ユーザー登録・ログイン・ログアウト機能
 - マイページ機能・・・自分のレシピ・つくれぽを一覧表示します。自分のアイコンと紹介文を設定することが出来ます。
-
-
-# データベース設計
+## 使用技術
+### 言語・フレームワーク・ライブラリ
+- Ruby on Rails
+- HTML, CSS
+- Java Script
+- jQuery
+### 環境
+- インフラ
+  - AWS EC2
+  - Capistranoによる自動デプロイ
+- サーバー
+  - Unicorn
+  - Nginx
+- ストレージ
+  - S3
+### ツール
+- Github(チーム開発を想定し、各タスクごとにブランチとプルリクエストを作成)
+## このアプリを作成した理由 *Why?* 
+**エンジニアとしての適性を企業へアピール出来るサービスを最短で作成するため**
+- 既存のサービスを参考にすることにより、一からオリジナルな機能を開発するよりも、UI/UXの整ったアプリをスピーディに開発することが優先と考えたからです。
+- また、そのためにはCRUD + ログイン/ログアウト機能は最低限実装するべきだと思ったからです。
+## Responsive Design
+## データベース ER図
+![DB](https://i.gyazo.com/d3c96e3361a78d681b05194f0ebc336a.png)
 ## usersテーブル
 
 |Column|Type|Options|
@@ -39,10 +60,11 @@
 |------|----|-------|
 |title|string|null: false|
 |top_image|string|null: false|
-|how_many|string|null: false|
+|introduction|text||
+|how_many|string||
 |point|text||
 |background|text||
-|user_id|integer|null: false|
+|user_id|references|foreign_key: true|
 
 ### Association
 - has_many :makes
@@ -55,8 +77,8 @@
 |Column|Type|Options|
 |------|----|-------|
 |image|string||
-|how_make|text|null: false|
-|recipe_id|integer|null: false, foreign_key: true|
+|how_make|text||
+|recipe_id|references|foreign_key: true|
 
 ### Association
 - belongs_to :recipe
@@ -67,7 +89,7 @@
 |------|----|-------|
 |name|string|null: false|
 |amount|string|null: false|
-|recipe_id|integer|null: false, foreign_key: true|
+|recipe_id|references|foreign_key: true|
 
 ### Association
 - belongs_to :recipe
@@ -79,7 +101,7 @@
 |image|string|null: false|
 |comment|text|null: false|
 |recipe_id|integer|null: false, foreign_key: true|
-|user_id|integer|null: false|
+|user_id|integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :recipe
@@ -89,8 +111,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|intrger|null: false|
-|recipe_id|integer|null: false|
+|user_id|references|foreign_key: true|
+|recipe_id|references|foreign_key: true|
 
 ### Association
 - belongs_to :recipe
