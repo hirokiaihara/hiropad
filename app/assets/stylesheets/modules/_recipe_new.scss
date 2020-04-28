@@ -131,6 +131,10 @@ img#top_img_prev, img.top_present_img {
         background-color: #ececec;
         opacity: 0.6;
       }
+      .js-remove {
+        display: inline-block;
+        padding-left: 2px;
+      }
     }    
   }
 }

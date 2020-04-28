@@ -34,8 +34,11 @@
                       .field--flex
                         .js-file_group{"data-index" => "#{food.index}"}
                           = food.text_field :food_name, class: "js-file", placeholder: "例)豚肉、醤油"
-                        .js-file_group{"data-index" => "#{food.index}"}
                           = food.text_field :amount, class: "js-file", placeholder: "例)100g, 小さじ1"
+                          
+                          .js-remove
+                            %i.far.fa-window-close
+                        = food.check_box :_destroy, data:{ index: food.index }, class: 'hidden-food-destroy hidden'
                   #add-btn.btn
                     行を追加
                   #hidden-message
