@@ -1,4 +1,4 @@
-![ramenTimer](https://i.gyazo.com/514e4be64e05012193e9c35f989cdba1.mp4)
+![ramenTimer](https://i.gyazo.com/8861818eb3eeec3e6099d76338035c0f.jpg)
 
 # データベース設計
 ##
