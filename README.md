@@ -1,6 +1,6 @@
 # アプリ概要
 ## 毎日の料理を楽しくするレシピ検索アプリです
-![hiropad](https://i.gyazo.com/53306b2c31a6a6c41caf989d002cc0ff.jpg)
+![hiropad](https://i.gyazo.com/9af0df65defae354e7ff5b5f31fee6e5.jpg)
 ## 🌐 address 
 ### **https://3.113.152.91** 
 
