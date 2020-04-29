@@ -38,7 +38,10 @@
 ## レシピ投稿機能
 ![post](https://user-images.githubusercontent.com/61179665/80550800-37d9b580-89fc-11ea-9b20-857b52e3cda7.jpg)
 **トップ画像と作り方の画像に分けてプレビュー表示してから投稿出来ます。**
-**食材の入力欄も任意で増やしたり減らしたりすることが出来ます。**
+**食材の入力欄を任意で増やしたり減らしたりすることが出来ます。**
+## レシピ検索機能 ##
+<img width="997" alt="search" src="https://user-images.githubusercontent.com/61179665/80551532-b46d9380-89fe-11ea-8379-81e681944c73.png">
+**料理名、食材名でレシピを検索します**
 ## Responsive Design
 ![shotsnapp-1588079886 821](https://user-images.githubusercontent.com/61179665/80491915-4c876080-899e-11ea-862b-e7af99b9a048.png)
 ## データベース ER図
