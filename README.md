@@ -43,7 +43,7 @@
 <img width="997" alt="search" src="https://user-images.githubusercontent.com/61179665/80551532-b46d9380-89fe-11ea-8379-81e681944c73.png">
 **料理名、食材名でレシピを検索します**
 ## つくれぽ機能
-
+<img width="1002" alt="report" src="https://user-images.githubusercontent.com/61179665/80552135-a3258680-8a00-11ea-992a-192a3c0bbc7c.png">
 **他のユーザーのレシピに写真付きでコメント出来ます**
 ## Responsive Design
 ![shotsnapp-1588079886 821](https://user-images.githubusercontent.com/61179665/80491915-4c876080-899e-11ea-862b-e7af99b9a048.png)
