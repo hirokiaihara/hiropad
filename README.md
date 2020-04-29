@@ -47,7 +47,7 @@
 **他のユーザーのレシピに写真付きでコメント出来ます。**
 ## Responsive Design
 ![shotsnapp-1588079886 821](https://user-images.githubusercontent.com/61179665/80491915-4c876080-899e-11ea-862b-e7af99b9a048.png)
-**デバイスに合わせてレイアウト、ボタン表示を変更します。**
+#### デバイスに合わせてレイアウト、ボタン表示を変更します。
 ## データベース ER図
 ![DB](https://i.gyazo.com/d3c96e3361a78d681b05194f0ebc336a.png)
 
