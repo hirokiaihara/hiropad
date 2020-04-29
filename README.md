@@ -43,11 +43,11 @@
 ![search](https://i.gyazo.com/1e3af46e01f0d96453eb0f1af41e9e3b.png)
 **料理名、食材名でレシピを検索します。**
 ## つくれぽ機能
-![report](https://i.gyazo.com/9af0df65defae354e7ff5b5f31fee6e5.jpg)
+![report](https://i.gyazo.com/03efbe5ae01cb2e487ab3cb0c5bcc311.png)
 **他のユーザーのレシピに写真付きでコメント出来ます。**
 ## Responsive Design
 ![shotsnapp-1588079886 821](https://user-images.githubusercontent.com/61179665/80491915-4c876080-899e-11ea-862b-e7af99b9a048.png)
-**デバイスに合わせてレイアウト、ボタン表示を変更します。
+**デバイスに合わせてレイアウト、ボタン表示を変更します。**
 ## データベース ER図
 ![DB](https://i.gyazo.com/d3c96e3361a78d681b05194f0ebc336a.png)
 
