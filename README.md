@@ -40,13 +40,14 @@
 **トップ画像と作り方の画像に分けてプレビュー表示してから投稿出来ます。**
 **食材の入力欄を任意で増やしたり減らしたりすることが出来ます。**
 ## レシピ検索機能
-<img width="997" alt="search" src="https://user-images.githubusercontent.com/61179665/80551532-b46d9380-89fe-11ea-8379-81e681944c73.png">
-**料理名、食材名でレシピを検索します**
+![search](https://i.gyazo.com/1e3af46e01f0d96453eb0f1af41e9e3b.png)
+**料理名、食材名でレシピを検索します。**
 ## つくれぽ機能
-<img width="1002" alt="report" src="https://user-images.githubusercontent.com/61179665/80552135-a3258680-8a00-11ea-992a-192a3c0bbc7c.png">
-**他のユーザーのレシピに写真付きでコメント出来ます**
+![report](https://i.gyazo.com/9af0df65defae354e7ff5b5f31fee6e5.jpg)
+**他のユーザーのレシピに写真付きでコメント出来ます。**
 ## Responsive Design
 ![shotsnapp-1588079886 821](https://user-images.githubusercontent.com/61179665/80491915-4c876080-899e-11ea-862b-e7af99b9a048.png)
+**デバイスに合わせてレイアウト、ボタン表示を変更します。
 ## データベース ER図
 ![DB](https://i.gyazo.com/d3c96e3361a78d681b05194f0ebc336a.png)
 
