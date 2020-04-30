@@ -3,6 +3,7 @@
 }
 body {
   background-color: $main_color;
+  font-family: Helvetica, '游ゴシック', 'Yu Gothic', 'メイリオ', sans-serif;
 }
 .container {
   max-width: 1000px;
@@ -143,6 +144,7 @@ header {
   border: solid 1px $border_color;
   padding: 10px 15px 10px;
   color: $font_color;
+  letter-spacing: 0.1em;
   h1 {
     font-size: 25px;
     font-weight: bold;
@@ -175,9 +177,10 @@ header {
     border-bottom: 1px solid;
   }
   .login {
-    color: $orenge;
+    // color: $orenge;
     font-size: 15px;
     border-bottom: 1px solid;
+    font-weight: bold;
   }
   .login:hover {
     opacity: 0.7;
