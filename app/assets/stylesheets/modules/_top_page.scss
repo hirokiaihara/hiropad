@@ -134,10 +134,11 @@ header {
   }
 }
 .header__image {
-  background-image: image-url('fruits.jpg');
+  background-image: image-url('men.jpg');
   background-color:rgba(255,255,255,0.5);
   background-blend-mode:lighten;
   background-size: cover;
+  background-position: 100px 90%;
   border-radius: 3px;
   border: solid 1px $border_color;
   padding: 10px 15px 10px;
