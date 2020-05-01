@@ -2,7 +2,7 @@
 ## 毎日の料理を楽しくするレシピ検索アプリです
 ![hiropad](https://i.gyazo.com/9af0df65defae354e7ff5b5f31fee6e5.jpg)
 ## 🌐 address 
-### **http://3.113.152.91** 
+### **http://www.hiropad.com** 
 専用アカウントが埋め込んであります。
 ## 機能
 - レシピ投稿・・・・・・複数枚の画像をプレビューで確認後投稿できます。
@@ -22,7 +22,7 @@
 - jQuery
 ### 環境
 - インフラ
-  - AWS EC2
+  - AWS EC2 Route53
   - Capistranoによる自動デプロイ
 - サーバー
   - Unicorn
