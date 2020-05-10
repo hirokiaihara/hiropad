@@ -78,10 +78,11 @@ header {
   .link-logo {
     a {
       display: flex;
+      border: none;
       h1 {
         font-size: 25px;
         font-weight: bold;
-        margin-top: 5px;
+        margin-top: 10px;
         margin-left: 5px;
       }
       p {
@@ -146,7 +147,7 @@ header {
   color: $font_color;
   letter-spacing: 0.1em;
   h1 {
-    font-size: 25px;
+    font-size: 35px;
     font-weight: bold;
   }
   h2 {
@@ -154,10 +155,14 @@ header {
     border-bottom: solid 2px;
     display: inline-block;
     margin-bottom: 3px;
+    font-weight: bold;
+    font-style: italic;
   }
   h3 {
     font-size: 18px;
     font-weight: bold;
+    border-bottom: solid 2px;
+    display: inline-block;
   }
   h4 {
     font-size: 15px;
@@ -178,14 +183,21 @@ header {
   }
   .login {
     // color: $orenge;
-    font-size: 15px;
-    border-bottom: 1px solid;
+    display: inline-block;
+    padding-top: 10px;
+    font-size: 17px;
+    border-bottom: 2px solid;
     font-weight: bold;
+    font-style: italic;
   }
   .login:hover {
     opacity: 0.7;
   }
+  &__contents__users__field {
+    padding-top: 30px;
+  }
   &__contents__users__field--flex {
+    padding-top: 10px;
     display: flex;
     &__image {
       img {
